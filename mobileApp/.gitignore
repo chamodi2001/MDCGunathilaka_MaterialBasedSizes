@@ -13,3 +13,15 @@
 .externalNativeBuild
 .cxx
 local.properties
+# Gradle
+build/
+.gradle/
+out/
+
+# Log files
+*.log
+
+# Eclipse
+.classpath
+.project
+.settings/
