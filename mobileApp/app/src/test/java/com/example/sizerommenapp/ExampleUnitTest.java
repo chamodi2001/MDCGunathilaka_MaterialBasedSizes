@@ -1,4 +1,4 @@
-package com.example.sizerecomsystem;
+package com.example.sizerommenapp;
 
 import org.junit.Test;
 
