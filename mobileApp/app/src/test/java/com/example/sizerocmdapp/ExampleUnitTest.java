@@ -1,4 +1,4 @@
-package com.example.sizerommenapp;
+package com.example.sizerocmdapp;
 
 import org.junit.Test;
 

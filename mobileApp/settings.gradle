@@ -12,5 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "SizeRommenApp"
+rootProject.name = "sizeRocmdApp"
 include ':app'

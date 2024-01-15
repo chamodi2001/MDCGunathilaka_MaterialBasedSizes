@@ -9,10 +9,13 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.SizeRommenApp"
+        android:theme="@style/Theme.SizeRocmdApp"
         tools:targetApi="31">
+<!--        <activity-->
+<!--            android:name=".signup"-->
+<!--            android:exported="false" />-->
         <activity
-            android:name=".MainActivity"
+            android:name=".signup"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

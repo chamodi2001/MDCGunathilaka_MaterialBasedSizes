@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.sizerommenapp'
+    namespace 'com.example.sizerocmdapp'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.sizerommenapp"
+        applicationId "com.example.sizerocmdapp"
         minSdk 24
         targetSdk 33
         versionCode 1
