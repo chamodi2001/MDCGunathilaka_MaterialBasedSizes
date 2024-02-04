@@ -1,0 +1,34 @@
+import React, { useState } from 'react';
+import { View, Text, TextInput, Button, Alert } from 'react-native';
+
+const SignupForm = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [age, setAge] = useState('');
+  const [chestWidth, setChestWidth] = useState('');
+
+  const handleSignup = () => {
+    // Here you can handle the signup logic (e.g., validation, sending the data to a server)
+    Alert.alert('Signup successful');
+  };
+
+  return (
+    <View>
+      <Text>Username:</Text>
+      <TextInput value={username} onChangeText={setUsername} placeholder="Enter your username" />
+
+      <Text>Password:</Text>
+      <TextInput value={password} onChangeText={setPassword} placeholder="Enter your password" secureTextEntry />
+
+      <Text>Age:</Text>
+      <TextInput value={age} onChangeText={setAge} placeholder="Enter your age" keyboardType="numeric" />
+
+      <Text>Chest Width:</Text>
+      <TextInput value={chestWidth} onChangeText={setChestWidth} placeholder="Enter your chest width" keyboardType="numeric" />
+
+      <Button title="Sign Up" onPress={handleSignup} />
+    </View>
+  );
+};
+
+export default SignupForm;
