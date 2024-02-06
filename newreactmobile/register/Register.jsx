@@ -42,10 +42,7 @@ const Register=()=> {
             return;
         }
     };
-    // const handleSubmit = () => {
-    //     // Handle registration logic here
-    //     console.log(username, email, password);
-    //   };
+
     return (
         // <ImageBackground source={require('./back.jpg')} style={styles.image}>
         <View style={styles.container}>

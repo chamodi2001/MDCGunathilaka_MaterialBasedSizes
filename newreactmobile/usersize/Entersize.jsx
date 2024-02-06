@@ -11,12 +11,16 @@ const EnterSize=()=>{
     const [chestwidth,setcw]=useState('');
 
     const handleSubmit = () => {
-        if(!chestwidth || isNaN(chestwidth)){
+        if(!chestwidth){
             Alert.alert('Error', 'Chest Width is required');
             return;
         }
+        if(isNaN(chestwidth)){
+            Alert.alert('Error', 'Chest Width should be a number');
+            return;
+        }
         else{
-            Alert.alert('Successful', 'successfully registered');
+            Alert.alert('Successful');
             navigation.navigate('Login');
             return;
         }
@@ -24,7 +28,7 @@ const EnterSize=()=>{
 
     return(
         <View style={styles.container}>
-            <Text style={styles.title}>Enter Chest Size</Text>
+            <Text style={styles.title}>User Chest Size</Text>
             <TextInput style={styles.input} placeholder="Chest Size" onChangeText={text => setcw(text)} 
             defaultValue={chestwidth} />
             <TouchableOpacity style={stylessize.button} onPress={handleSubmit}>

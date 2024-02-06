@@ -48,6 +48,10 @@ const Login=()=> {
             <TouchableOpacity style={styles.button} onPress={handleSubmit}>
                 <Text style={styles.buttonText}>Login</Text>
             </TouchableOpacity>
+            <Text style={stylesregister.text}>Don't have an account?</Text> 
+            <TouchableOpacity style={stylesregister.text} onPress={() => navigation.navigate('Register')}>
+                <Text style={stylesregister.textsign}>Sign Up</Text>
+            </TouchableOpacity>
         </View>
     );
     };
