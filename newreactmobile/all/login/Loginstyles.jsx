@@ -1,6 +1,16 @@
 import { StyleSheet } from 'react-native';
 
-export const stylesregister = StyleSheet.create({
+export const styleslogin = StyleSheet.create({
+  title:{
+    color: '#414833',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    fontSize: 45,
+    fontStyle: 'italic',
+    marginTop: 50,
+    margin: 40,
+    padding: 10,
+  },
   text:{
     textAlign: 'center',
     fontStyle: 'italic',

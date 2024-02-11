@@ -18,8 +18,8 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 45,
     fontStyle: 'italic',
-    marginTop: 60,
-    margin: 40,
+    marginTop: 40,
+    margin: 25,
     padding: 10,
   },
   input: {

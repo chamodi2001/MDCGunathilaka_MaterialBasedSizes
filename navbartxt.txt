@@ -1,3 +1,6 @@
+no think i need a nav bar, but the nav bar should be a little different from page to page. think in the entersize page i want a nav bar where it can go to back.
+then in the Material.jsx page it have a nav bar with back and home page. the home page shold be that entersize page.
+
 // import React from 'react';
 // import { Text, View } from 'react-native';
 // import Register from './register/Register';

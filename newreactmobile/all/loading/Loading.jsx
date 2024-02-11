@@ -9,9 +9,8 @@ const Loading=()=>{
     useEffect(() => {
         const timer = setTimeout(() => {
             navigation.navigate('Register');
-        }, 3000); // 3000ms = 3s
+        }, 2000); // 3000ms = 3s
 
-        // Clear timeout if the component is unmounted
         return () => clearTimeout(timer);
     }, [navigation]);
 

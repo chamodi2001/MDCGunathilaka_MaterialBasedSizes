@@ -1,9 +1,11 @@
 import React,{useState} from 'react';
 import { Text, View, TextInput, Button, TouchableOpacity } from 'react-native';
-import { stylesregister } from './Loginstyles';
+import { styleslogin } from './Loginstyles';
 import { styles } from '../register/Registerstyles';
 import { Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import Register from '../register/Register';
+import EnterSize from '../usersize/Entersize';
 
 const Login=()=> {
     const navigation = useNavigation(); 
@@ -40,7 +42,7 @@ const Login=()=> {
     };
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Login</Text>
+            <Text style={styleslogin.title}>Login</Text>
             <TextInput style={styles.input} placeholder="Username" onChangeText={text => setunlog(text)}
             defaultValue={usernamelog} />
             <TextInput style={styles.input} placeholder="Password" onChangeText={text => setpwlog(text)}
@@ -48,9 +50,9 @@ const Login=()=> {
             <TouchableOpacity style={styles.button} onPress={handleSubmit}>
                 <Text style={styles.buttonText}>Login</Text>
             </TouchableOpacity>
-            <Text style={stylesregister.text}>Don't have an account?</Text> 
-            <TouchableOpacity style={stylesregister.text} onPress={() => navigation.navigate('Register')}>
-                <Text style={stylesregister.textsign}>Sign Up</Text>
+            <Text style={styleslogin.text}>Don't have an account?</Text> 
+            <TouchableOpacity style={styleslogin.text} onPress={() => navigation.navigate('Register')}>
+                <Text style={styleslogin.textsign}>Sign Up</Text>
             </TouchableOpacity>
         </View>
     );
