@@ -2,6 +2,9 @@ import React,{useState} from 'react';
 import { Text, View, TextInput, Button,TouchableOpacity } from 'react-native';
 import { styles } from './Registerstyles';
 import {Login} from '../login/Login';
+import axios from 'axios';
+// import Bottomstack from '../App';
+
 //
 import { Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
@@ -14,7 +17,21 @@ const Register=()=> {
     const [age, setage] = useState('');
     const[chestwidth, setcw]=useState('');  
 
-    const handleSubmit = () => {
+    // const handleSubmit =() => {
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        const Register = { username, password, age, chestwidth };
+        
+        try {
+        const res = await axios.post('http://localhost:4000/addbooks', Register);
+        window.alert('Successfully added data to the database');
+        console.log(res.data);
+        } catch (error) {
+        console.error('Error in adding a new user:', error);
+        }
+        ////////////////////
+
+        /////Validations
         if (!username) {
           //checks username is empty
           Alert.alert('Error', 'Username is required');
@@ -32,30 +49,26 @@ const Register=()=> {
             Alert.alert('Error', 'Enter a valid age');
             return;
         }
-        // if(!chestwidth || isNaN(chestwidth)){
-        //     Alert.alert('Error', 'Chest Width is required');
-        //     return;
-        // }
         else{
             Alert.alert('Successful', 'successfully registered');
             navigation.navigate('Login');
             return;
-        }
+        }     
     };
 
     return (
         // <ImageBackground source={require('./back.jpg')} style={styles.image}>
         <View style={styles.container}>
             <Text style={styles.title}>Sign Up</Text>
-            <TextInput style={styles.input} placeholder="Username" onChangeText={text => setun(text)}
-            defaultValue={username} required/> 
+            <TextInput style={styles.input} onChangeText={text => setun(text)}
+            defaultValue={username} placeholder="Username" required/> 
             {/* initial value of the input field */}
-            <TextInput style={styles.input} placeholder="Password" onChangeText={text => setpw(text)}
-                defaultValue={password} secureTextEntry/>
-            <TextInput style={styles.input} placeholder="Age" onChangeText={text => setage(text)}
-                defaultValue={age} />
-            <TextInput style={styles.input} placeholder="Chest Width" onChangeText={text => setcw(text)}
-                defaultValue={chestwidth} />
+            <TextInput style={styles.input} onChangeText={text => setpw(text)}
+                defaultValue={password} placeholder="Password" secureTextEntry/>
+            <TextInput style={styles.input} onChangeText={text => setage(text)}
+                defaultValue={age} placeholder="Age"/>
+            <TextInput style={styles.input} onChangeText={text => setcw(text)}
+                defaultValue={chestwidth} placeholder="Chest Width"/>
             {/* when click onthe btn, navigate to the login page */}
             <TouchableOpacity style={styles.button} onPress={handleSubmit}>
                 <Text style={styles.buttonText}>Sign Up</Text>
@@ -64,6 +77,7 @@ const Register=()=> {
                 <Text style={styles.buttonText}>Sign Up</Text>
             </TouchableOpacity> */}
             {/* <Button style={styles.button} title="sign up" onPress={handleSubmit} /> */}
+            <Button title="Sign up" onPress={() => navigation.navigate('Bottomstack')} />
         </View>
         // </ImageBackground>
     );

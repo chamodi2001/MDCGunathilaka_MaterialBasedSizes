@@ -1,0 +1,3 @@
+the project that is a online best fitting size recomending application. user have to enter thier chest size and it would recommend the best itting UK size.
+Then from a survey data is gathered, user have to enter the chest size. then for each material clothing item which is the preffered UK size. like for an example for linen material , what is your preffered UK size. And also the data is gathered from a mobile application as well. So it asks about user's previous purchases from each brand and then it asks the user which material of cothing is that,and wich size was required or fitted perfectly.
+so from both these data, it would be feed to a mathematical model whereit can reacommend the best fitting size for the user.

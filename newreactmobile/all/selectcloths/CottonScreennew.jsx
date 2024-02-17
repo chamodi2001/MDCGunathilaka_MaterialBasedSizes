@@ -7,10 +7,10 @@ import { useNavigation } from '@react-navigation/native';
 import { Picker } from '@react-native-picker/picker';
 
 
-const CottonScreen=()=> {
+const CottonScreennew=()=> {
     const navigation = useNavigation(); 
 
-    const [selectedcloth, setselectedcloth] = useState("Cotton");
+    const [selectedcloth, setselectedcloth] = useState();
 
 
     return (
@@ -25,4 +25,4 @@ const CottonScreen=()=> {
     );
     };
 
-    export default CottonScreen;
+    export default CottonScreennew;

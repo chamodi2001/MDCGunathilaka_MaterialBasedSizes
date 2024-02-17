@@ -20,8 +20,8 @@ const EnterSize=()=>{
             return;
         }
         else{
-            Alert.alert('Successful');
-            navigation.navigate('Login');
+            // Alert.alert('Successful');
+            navigation.navigate('Material');
             return;
         }
     };
@@ -34,6 +34,8 @@ const EnterSize=()=>{
             <TouchableOpacity style={stylessize.button} onPress={handleSubmit}>
                 <Text style={stylessize.buttonText}>Enter</Text>
             </TouchableOpacity>
+            {/* <Button title="Go Back" onPress={() => navigation.goBack()} /> */}
+            {/* <Button title="Back" onPress={() => navigation.navigate('Login')}/> */}
         </View>
     );
 };
