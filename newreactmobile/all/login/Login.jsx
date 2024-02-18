@@ -29,7 +29,7 @@ const Login=()=> {
               }
           else{
               Alert.alert('Successful', 'successfully registered');
-              navigation.navigate('EnterSize'); //obj.func
+              navigation.navigate('Bottomstack'); //obj.func
               return;
           }
         //checks with data base, if the user exists, and 

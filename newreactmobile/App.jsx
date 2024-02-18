@@ -34,10 +34,11 @@ const tabnav= createBottomTabNavigator();
 
 const Bottomstack = () => {
   return (
-    <tabnav.Navigator>
+    <tabnav.Navigator screenOptions={{headerShown: false}}>
       {/* <navbar.Screen name="Login" component={Login} /> */}
-      <tabnav.Screen name="Home" component={EnterSize}
+      <tabnav.Screen name="EnterSize" component={EnterSize}
       options={{
+        // headerShown: false,
         tabBarIcon: ({ focused }) => (
           <Image
             source={require('./public/images/home1.png')}
@@ -46,7 +47,7 @@ const Bottomstack = () => {
         ),}}
       />
       <tabnav.Screen name="Material" component={Material} />
-      {/* <tabnav.Screen name="CottonScreen" component={CottonScreennew} /> */}
+      <tabnav.Screen name="CottonScreennew" component={CottonScreennew} options={{ headerShown: false }}/>
     </tabnav.Navigator>
   );
 };
@@ -59,10 +60,11 @@ const App = () => {
           <Stackpath.Screen name="Loading" component={Loading} options={{ headerShown: false }}/>
           <Stackpath.Screen name="Register" component={Register} options={{ headerShown: false }}/>
           <Stackpath.Screen name="Login" component={Login} options={{ headerShown: false }}/>
-          <Stackpath.Screen name="EnterSize" component={EnterSize} options={{ headerShown: false }}/>
-          <Stackpath.Screen name="Material" component={Material} options={{ headerShown: false }}/>
-          <Stackpath.Screen name="CottonScreennew" component={CottonScreennew} options={{ headerShown: false }}/>
           <Stackpath.Screen name="Bottomstack" component={Bottomstack} />
+          {/* <Stackpath.Screen name="EnterSize" component={EnterSize} options={{ headerShown: false }}/>
+          <Stackpath.Screen name="Material" component={Material} options={{ headerShown: false }}/>
+          <Stackpath.Screen name="CottonScreennew" component={CottonScreennew} options={{ headerShown: false }}/> */}
+         
         
       </Stackpath.Navigator>
     </NavigationContainer>
