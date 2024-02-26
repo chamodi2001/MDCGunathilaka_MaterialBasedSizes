@@ -23,9 +23,9 @@ const Register=()=> {
         const Register = { username, password, age, chestwidth };
         
         try {
-        const res = await axios.post('http://localhost:4000/addbooks', Register);
+        const output = await axios.post('http://localhost:8080/user', Register);
         window.alert('Successfully added data to the database');
-        console.log(res.data);
+        console.log(output.data);
         } catch (error) {
         console.error('Error in adding a new user:', error);
         }

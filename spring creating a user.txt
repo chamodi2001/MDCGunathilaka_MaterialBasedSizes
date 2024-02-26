@@ -1,0 +1,8 @@
+CREATE USER 'new_user'@'localhost' IDENTIFIED BY 'password';
+
+GRANT ALL PRIVILEGES ON your_database.* TO 'new_user'@'localhost';
+
+FLUSH PRIVILEGES;
+SHOW GRANTS FOR 'new_user'@'localhost';
+
+CREATE USER 'chamouser'@'localhost' IDENTIFIED BY 'kim6I8$_io';
