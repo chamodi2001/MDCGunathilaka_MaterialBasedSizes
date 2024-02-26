@@ -14,7 +14,25 @@ const Register=()=> {
     const [age, setage] = useState('');
     const[chestwidth, setcw]=useState('');  
 
+<<<<<<< Updated upstream:newreactmobile/register/Register.jsx
     const handleSubmit = () => {
+=======
+    // const handleSubmit =() => {
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        const Register = { username, password, age, chestwidth };
+        
+        try {
+        const output = await axios.post('http://localhost:8080/user', Register);
+        window.alert('Successfully added data to the database');
+        console.log(output.data);
+        } catch (error) {
+        console.error('Error in adding a new user:', error);
+        }
+        ////////////////////
+
+        /////Validations
+>>>>>>> Stashed changes:newreactmobile/all/register/Register.jsx
         if (!username) {
           //checks username is empty
           Alert.alert('Error', 'Username is required');

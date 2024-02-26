@@ -4,6 +4,13 @@ import { stylesregister } from './Loginstyles';
 import { styles } from '../register/Registerstyles';
 import { Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+<<<<<<< Updated upstream:newreactmobile/login/Login.jsx
+=======
+import Register from '../register/Register';
+import EnterSize from '../usersize/Entersize';
+import axios from 'axios';
+
+>>>>>>> Stashed changes:newreactmobile/all/login/Login.jsx
 
 const Login=()=> {
     const navigation = useNavigation(); 
@@ -11,7 +18,19 @@ const Login=()=> {
     const [usernamelog, setunlog] = useState(''); 
     const [passwordlog, setpwlog] = useState('');
 
-    const handleSubmit = () => {
+    const handleSubmit = async (event) => {
+        ////
+        event.preventDefault();
+        const Login = { usernamelog, passwordlog};
+        
+        try {
+        const output = await axios.get('http://localhost:8080/userlogin', Login);
+        window.alert('Successfully added data to the database');
+        console.log(output.data);
+        } catch (error) {
+        console.error('Error in adding a new user:', error);
+        }
+        ////
         if (!usernamelog) {
             //checks username is empty
             Alert.alert('Error', 'Username is required');
