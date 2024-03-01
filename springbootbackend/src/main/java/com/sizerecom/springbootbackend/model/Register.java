@@ -3,7 +3,7 @@ package com.sizerecom.springbootbackend.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-
+//a constructor
 @Entity //generate the tables when connecting the java to sql
 public class Register {
     //entity - fields/attibutes

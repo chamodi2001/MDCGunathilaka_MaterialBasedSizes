@@ -2,7 +2,12 @@ import React,{useState} from 'react';
 import { Text, View, TextInput, Button,TouchableOpacity } from 'react-native';
 import { styles } from './Registerstyles';
 import {Login} from '../login/Login';
+
 import axios from 'axios';
+// import Bottomstack from '../App';
+
+import axios from 'axios';
+import {styleslogin} from '../login/Loginstyles';
 // import Bottomstack from '../App';
 
 //
@@ -23,7 +28,7 @@ const Register=()=> {
         const Register = { username, password, age, chestwidth };
         
         try {
-        const output = await axios.post('http://localhost:8080/user', Register);
+        const output = await axios.post('http://192.168.1.59:8080/user', Register);
         window.alert('Successfully added data to the database');
         console.log(output.data);
         } catch (error) {
@@ -77,7 +82,11 @@ const Register=()=> {
                 <Text style={styles.buttonText}>Sign Up</Text>
             </TouchableOpacity> */}
             {/* <Button style={styles.button} title="sign up" onPress={handleSubmit} /> */}
-            <Button title="Sign up" onPress={() => navigation.navigate('Bottomstack')} />
+
+            <Text style={styleslogin.text}>Already have an account?</Text> 
+            <TouchableOpacity style={styleslogin.text} onPress={() => navigation.navigate('Login')}>
+                <Text style={styleslogin.textsign}>Sign In</Text>
+            </TouchableOpacity>
         </View>
         // </ImageBackground>
     );

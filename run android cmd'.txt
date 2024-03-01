@@ -1,8 +1,18 @@
+
 npx react-native run-android
 
 /////////
 npx react-native start
 npx react-native run-android
 
-/////////
-ipconfig 
+
+
+ipconfig /all
+//get the IPv4
+
+//reset the auto increment
+ALTER TABLE your_table_name AUTO_INCREMENT = 1;
+
+//dlete the raw in a table
+DELETE FROM tb_nmae WHERE id between 1 AND 15;
+

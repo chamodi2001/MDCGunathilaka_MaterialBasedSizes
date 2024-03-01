@@ -1,14 +1,13 @@
-package com.sizerecom.springbootbackend;
+package com.springBEnew.newbackendSpring;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringbootbackendApplication {
+public class NewbackendSpringApplication {
 
 	public static void main(String[] args) {
-
-		SpringApplication.run(SpringbootbackendApplication.class, args);
+		SpringApplication.run(NewbackendSpringApplication.class, args);
 	}
 
 }

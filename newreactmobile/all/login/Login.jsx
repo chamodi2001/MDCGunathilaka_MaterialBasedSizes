@@ -13,55 +13,63 @@ import axios from 'axios';
 const Login=()=> {
     const navigation = useNavigation(); 
 
-    const [usernamelog, setunlog] = useState(''); 
-    const [passwordlog, setpwlog] = useState('');
+    const [loginusername, setunlog] = useState(''); 
+    const [loginpassword, setpwlog] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleSubmit = async (event) => {
-        ////
+        //
         event.preventDefault();
-        const Login = { usernamelog, passwordlog};
+        const Logindetails = {
+            loginusername:loginusername,
+            loginpassword:loginpassword
+        };
+       
+        await axios.post('http://192.168.1.59:8080/userlogin', Logindetails)
+        .then(output => {
+            console.log(output.data);
+            Alert.alert('Login successful');
+            navigation.navigate('Bottomstack'); //obj.func
+        })
         
-        try {
-        const output = await axios.get('http://localhost:8080/userlogin', Login);
-        window.alert('Successfully added data to the database');
-        console.log(output.data);
-        } catch (error) {
-        console.error('Error in adding a new user:', error);
-        }
-        ////
-        if (!usernamelog) {
+        .catch(error => {
+            console.log(error);
+            // Alert.alert('Please enter a valid Username and Password');
+            Alert.alert('Username or Password is Incorrect');
+
+            // if (error.output && error.output.status === 401) {
+            //     // Alert.alert('error pw and un');
+            //     setErrorMessage('Invalid username or password');
+            // } else {
+            //     console.log(error);
+            // }
+            
+        });
+        
+        //
+        if (!loginusername) {
             //checks username is empty
             Alert.alert('Error', 'Username is required');
             return;//stops the function
           }
-          if (!passwordlog) {
+          if (!loginpassword) {
               Alert.alert('Error', 'Password is required');
               return;
               }
-              else if(passwordlog.length < 4){
+              else if(loginpassword.length < 4){
                   Alert.alert('Error', 'Enter more than 4 characters');
                   return;
               }
-          else{
-              Alert.alert('Successful', 'successfully registered');
-              navigation.navigate('Bottomstack'); //obj.func
-              return;
-          }
-        //checks with data base, if the user exists, and 
-        //if the password matches the username
-        // if (!usernamelog) {
-        //   //checks username is empty
-        //   Alert.alert('Error', 'Username is required');
-        //   return;
-        // }
+        
     };
     return (
         <View style={styles.container}>
             <Text style={styleslogin.title}>Login</Text>
             <TextInput style={styles.input} placeholder="Username" onChangeText={text => setunlog(text)}
-            defaultValue={usernamelog} />
+            defaultValue={loginusername} />
             <TextInput style={styles.input} placeholder="Password" onChangeText={text => setpwlog(text)}
-                defaultValue={passwordlog} secureTextEntry/>
+                defaultValue={loginpassword} secureTextEntry/>
+            {errorMessage && <p>{errorMessage}</p>}
             <TouchableOpacity style={styles.button} onPress={handleSubmit}>
                 <Text style={styles.buttonText}>Login</Text>
             </TouchableOpacity>
