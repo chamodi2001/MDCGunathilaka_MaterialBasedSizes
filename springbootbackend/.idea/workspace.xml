@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="507f388f-5a6d-47ff-8e06-9a0b267ae3d3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Interim/10819486_Interim.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../Interim/10819486_Interim.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Interim/libraries.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../Interim/libraries.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../about spring.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../about spring.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apptsx.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../back.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/app/src/androidTest/java/com/example/sizerocmdapp/ExampleInstrumentedTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/app/src/main/java/com/example/sizerocmdapp/login.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/app/src/main/java/com/example/sizerocmdapp/signup.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/app/src/main/res/drawable/login.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/app/src/main/res/drawable/signup.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/app/src/main/res/layout/activity_login.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/app/src/main/res/layout/activity_signup.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/app/src/main/res/mipmap-anydpi-v33/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/app/src/main/res/mipmap-hdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/app/src/main/res/mipmap-mdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/app/src/main/res/values-night/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/app/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/app/src/main/res/values/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/app/src/main/res/xml/backup_rules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/app/src/main/res/xml/data_extraction_rules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/app/src/test/java/com/example/sizerocmdapp/ExampleUnitTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobileApp/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../navbar simple.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../newreactmobile/all/login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../newreactmobile/all/login/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../newreactmobile/all/register/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../newreactmobile/all/register/Register.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../run android cmd'.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../run android cmd'.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring creating a user.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../spring creating a user.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sizerecom/springbootbackend/SpringbootbackendApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sizerecom/springbootbackend/SpringbootbackendApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sizerecom/springbootbackend/controller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sizerecom/springbootbackend/controller/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sizerecom/springbootbackend/model/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sizerecom/springbootbackend/model/Register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sizerecom/springbootbackend/repository/RegisterRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sizerecom/springbootbackend/repository/RegisterRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sizerecom/springbootbackend/SpringbootbackendApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sizerecom/springbootbackend/SpringbootbackendApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sizerecom/springbootbackend/controller/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sizerecom/springbootbackend/controller/RegisterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sizerecom/springbootbackend/repository/RegisterRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sizerecom/springbootbackend/repository/RegisterRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springtest/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springtest/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springtest/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springtest/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springtest/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springtest/src/Main.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2cgvZgFIGL23RXRDkURjqKf3INl" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.SpringbootbackendApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/desktop D/3rd year/PUSL3190_MDCGunathilaka/springbootbackend&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="SpringbootbackendApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sizerecom.springbootbackend.SpringbootbackendApplication" />
+      <module name="springbootbackend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sizerecom.springbootbackend.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.SpringbootbackendApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-1.8.0_402-corretto-1.8.0_402-4caba194b151-ae57be32" />
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="507f388f-5a6d-47ff-8e06-9a0b267ae3d3" name="Changes" comment="" />
+      <created>1708546092987</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1708546092987</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WfRunsListSearchHistory"><![CDATA[{
+  "history": [
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    }
+  ],
+  "lastFilter": {
+  }
+}]]></component>
+</project>

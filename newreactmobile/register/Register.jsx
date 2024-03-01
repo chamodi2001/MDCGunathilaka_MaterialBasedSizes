@@ -2,6 +2,13 @@ import React,{useState} from 'react';
 import { Text, View, TextInput, Button,TouchableOpacity } from 'react-native';
 import { styles } from './Registerstyles';
 import {Login} from '../login/Login';
+<<<<<<< Updated upstream:newreactmobile/register/Register.jsx
+=======
+import axios from 'axios';
+import {styleslogin} from '../login/Loginstyles';
+// import Bottomstack from '../App';
+
+>>>>>>> Stashed changes:newreactmobile/all/register/Register.jsx
 //
 import { Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
@@ -23,7 +30,7 @@ const Register=()=> {
         const Register = { username, password, age, chestwidth };
         
         try {
-        const output = await axios.post('http://localhost:8080/user', Register);
+        const output = await axios.post('http://192.168.1.59:8080/user', Register);
         window.alert('Successfully added data to the database');
         console.log(output.data);
         } catch (error) {
@@ -81,10 +88,17 @@ const Register=()=> {
             <TouchableOpacity style={styles.button} onPress={handleSubmit}>
                 <Text style={styles.buttonText}>Sign Up</Text>
             </TouchableOpacity>
+<<<<<<< Updated upstream:newreactmobile/register/Register.jsx
             {/* <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Login')}>
                 <Text style={styles.buttonText}>Sign Up</Text>
             </TouchableOpacity> */}
             {/* <Button style={styles.button} title="sign up" onPress={handleSubmit} /> */}
+=======
+            <Text style={styleslogin.text}>Already have an account?</Text> 
+            <TouchableOpacity style={styleslogin.text} onPress={() => navigation.navigate('Login')}>
+                <Text style={styleslogin.textsign}>Sign In</Text>
+            </TouchableOpacity>
+>>>>>>> Stashed changes:newreactmobile/all/register/Register.jsx
         </View>
         // </ImageBackground>
     );

@@ -23,6 +23,7 @@ const Stack = createStackNavigator();
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 
+<<<<<<< Updated upstream
 const App = () => {
   return (
     <NavigationContainer>
@@ -34,6 +35,45 @@ const App = () => {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="EnterSize" component={EnterSize} />
       </Stack.Navigator>
+=======
+const Bottomstack = () => {
+  return (
+    <tabnav.Navigator screenOptions={{headerShown: false}}>
+
+      {/* <tabnav.Screen name="EnterSize" component={EnterSize}/> */}
+      <tabnav.Screen name="Material" component={Material} 
+      options={{
+        headerShown: false,
+        tabBarIcon: ({ focused }) => (
+          <Image
+            source={require('./public/images/home1.png')}
+            style={{ width: 25, height: 25 }}
+          />
+        ),}}
+      />
+      <tabnav.Screen name="CottonScreennew" component={CottonScreennew} options={{ headerShown: false }}/>
+
+    </tabnav.Navigator>
+  );
+};
+const App = () => {
+  return (
+    <NavigationContainer>
+       <Stackpath.Navigator>
+
+          
+          <Stackpath.Screen name="Loading" component={Loading} options={{ headerShown: false }}/>
+          <Stackpath.Screen name="Register" component={Register} options={{ headerShown: false }}/>
+          <Stackpath.Screen name="Login" component={Login} options={{ headerShown: false }}/>
+          <Stackpath.Screen name="EnterSize" component={EnterSize} options={{ headerShown: false }}/>
+          <Stackpath.Screen name="Bottomstack" component={Bottomstack} />
+          {/* <Stackpath.Screen name="EnterSize" component={EnterSize} options={{ headerShown: false }}/>
+          <Stackpath.Screen name="Material" component={Material} options={{ headerShown: false }}/>
+          <Stackpath.Screen name="CottonScreennew" component={CottonScreennew} options={{ headerShown: false }}/> */}
+         
+        
+      </Stackpath.Navigator>
+>>>>>>> Stashed changes
     </NavigationContainer>
   );
 };
