@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="507f388f-5a6d-47ff-8e06-9a0b267ae3d3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sizerecom/springbootbackend/controller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sizerecom/springbootbackend/controller/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sizerecom/springbootbackend/repository/RegisterRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sizerecom/springbootbackend/repository/RegisterRepo.java" afterDir="false" />
-    </list>
+    <list default="true" id="507f388f-5a6d-47ff-8e06-9a0b267ae3d3" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,7 +44,7 @@
     "Application.SpringbootbackendApplication.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "testdev",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/desktop D/3rd year/PUSL3190_MDCGunathilaka/springbootbackend",
     "project.structure.last.edited": "Project",
@@ -94,8 +91,8 @@
     </task>
     <servers />
   </component>
-  <component name="WfRunsListSearchHistory"><![CDATA[{
-  "history": [
+  <component name="WfRunsListSearchHistory">{
+  &quot;history&quot;: [
     {
     },
     {
@@ -111,7 +108,7 @@
     {
     }
   ],
-  "lastFilter": {
+  &quot;lastFilter&quot;: {
   }
-}]]></component>
+}</component>
 </project>
