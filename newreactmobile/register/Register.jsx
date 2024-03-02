@@ -3,8 +3,15 @@ import { Text, View, TextInput, Button,TouchableOpacity } from 'react-native';
 import { styles } from './Registerstyles';
 import {Login} from '../login/Login';
 <<<<<<< Updated upstream:newreactmobile/register/Register.jsx
+<<<<<<< Updated upstream:newreactmobile/register/Register.jsx
 =======
 import axios from 'axios';
+=======
+
+import axios from 'axios';
+// import Bottomstack from '../App';
+
+>>>>>>> Stashed changes:newreactmobile/all/register/Register.jsx
 import {styleslogin} from '../login/Loginstyles';
 // import Bottomstack from '../App';
 
@@ -93,7 +100,10 @@ const Register=()=> {
                 <Text style={styles.buttonText}>Sign Up</Text>
             </TouchableOpacity> */}
             {/* <Button style={styles.button} title="sign up" onPress={handleSubmit} /> */}
+<<<<<<< Updated upstream:newreactmobile/register/Register.jsx
 =======
+=======
+>>>>>>> Stashed changes:newreactmobile/all/register/Register.jsx
             <Text style={styleslogin.text}>Already have an account?</Text> 
             <TouchableOpacity style={styleslogin.text} onPress={() => navigation.navigate('Login')}>
                 <Text style={styleslogin.textsign}>Sign In</Text>

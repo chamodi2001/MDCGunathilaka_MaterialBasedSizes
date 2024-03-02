@@ -25,19 +25,12 @@ public class LoginController {
 //        return loginRepoObj.save(oldUser);
 //    }
 
-//    @PostMapping("/login")
-//    public ResponseEntity<String> loginmethod(@RequestBody Login oldUser) {
-//        Login existingUser = loginRepoObj.findByloginUsername(oldUser.getloginUsername());
-//
-//        if (existingUser != null && existingUser.getloginPassword().equals(oldUser.getloginPassword())) {
-//            return new ResponseEntity<>("Login successful", HttpStatus.OK);
-//        } else {
-//            return new ResponseEntity<>("Invalid username or password", HttpStatus.UNAUTHORIZED);
-//        }
-//    }
     private RegisterRepo registerRepoObj;
 @PostMapping("/userlogin")
 public ResponseEntity<String> loginmethod(@RequestBody Login oldUser) {
+    //This line retrieves a Register object from the registerRepoObj repository using the username from the loginuser object.
+    // The Register object represents a user that has already registered.
+    //call the Register
     Register existingUser = registerRepoObj.findByUsername(oldUser.getLoginusername());
 
     if (existingUser != null && existingUser.getPassword().equals(oldUser.getLoginpassword())) {
@@ -46,26 +39,4 @@ public ResponseEntity<String> loginmethod(@RequestBody Login oldUser) {
         return new ResponseEntity<>("Wrong Password or Username", HttpStatus.UNAUTHORIZED);
     }
 }
-
-//    @PostMapping("/login")
-//    //ResponseEntity idicades the entire HTTP response and <?> means-type of that response can be any
-//    public ResponseEntity<?> varifyUser(@RequestBody Login olduser) {
-//        return loginRepoObj.findByUsername(olduser);
-//
-//        //veryfies and authenticate the user
-//        Optional<User> optionalUser = userRepository.findByUsername(Login.getUsername());
-//        if (!optionalUser.isPresent()) {
-//            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid Username or Password");
-//        }
-//
-//        User user = optionalUser.get();
-//
-//        // Validate password
-//        if (!passwordEncoder.matches(Login.getPassword(), user.getPassword())) {
-//            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid Username or Password");
-//        }
-//
-//        // If username and password are valid, return a success message
-//        return ResponseEntity.ok("Login successful");
-//    }
 }

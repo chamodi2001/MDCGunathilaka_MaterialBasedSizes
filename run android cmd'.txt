@@ -5,9 +5,13 @@ npx react-native run-android
 
 /////////
 npx react-native start
+<<<<<<< Updated upstream
 npx react-native run-android
 
 /////////
+=======
+
+>>>>>>> Stashed changes
 ipconfig /all
 //get the IPv4
 

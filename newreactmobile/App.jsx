@@ -13,14 +13,23 @@
 // }
 
 // export default App;
-
+import React from 'react';
+import {Image } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack'; //stack of screens to navigate
 import { NavigationContainer } from '@react-navigation/native'; //to wrap the stack navigator
-import Register from './register/Register';
-import Login from './login/Login';
-import EnterSize from './usersize/Entersize';             
-const Stack = createStackNavigator();
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Loading from './all/loading/Loading';
+import Register from './all/register/Register';
+import Login from './all/login/Login';
+import EnterSize from './all/usersize/Entersize'; 
+import Material from './all/selectcloths/Material';
+import CottonScreen from './all/selectcloths/CottonScreennew';
+
+import BottomNavbar from './all/bottomnav/BottomNavbar';
+// import { SafeAreaProvider } from 'react-native-safe-area-context';    
+const Stackpath = createStackNavigator(); 
+const tabnav= createBottomTabNavigator();
+
 
 
 <<<<<<< Updated upstream
@@ -50,8 +59,17 @@ const Bottomstack = () => {
             style={{ width: 25, height: 25 }}
           />
         ),}}
+      /> 
+      <tabnav.Screen name="CottonScreen" component={CottonScreen}
+      options={{
+        headerShown: false,
+        tabBarIcon: ({ focused }) => (
+          <Image
+            source={require('./public/images/cottonicon.jpg')}
+            style={{ width: 25, height: 25 }}
+          />
+        ),}}
       />
-      <tabnav.Screen name="CottonScreennew" component={CottonScreennew} options={{ headerShown: false }}/>
 
     </tabnav.Navigator>
   );

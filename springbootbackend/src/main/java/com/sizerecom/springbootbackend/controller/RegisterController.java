@@ -24,7 +24,7 @@ public class RegisterController {
    //    private RegisterRepo registerRepo = new RegisterRepoImpl();
    //    ///other controller codes///}
 
-    private RegisterRepo registerRepoObj; //interface and object //in here we call this to import the save method from RegisterRepo interface, jpa framework
+   private RegisterRepo registerRepoObj; //interface and object //in here we call this to import the save method from RegisterRepo interface, jpa framework
 
 
    //post mapping- annotation for mapping HTTP POST req- for postman api
@@ -45,22 +45,7 @@ public class RegisterController {
 
 
     }
-/////////////////////////////
-//    @GetMapping("/user/{username}") //GET THE USER INFO USING ID
-//    Register getUserById(@PathVariable String username) { //for the specific user
-//        return registerRepo.findById(Long.valueOf(username)).orElseThrow(() -> new UserNotFoundExceptioncls(username));
-//    }
 
-//    @PostMapping("/userlogin")
-//    public ResponseEntity<String> userLogin(@RequestParam String username, @RequestParam String password) {
-//        Register user = registerRepo.findByUsername(username);
-//        if (user != null && user.getPassword().equals(password)) {
-//            return new ResponseEntity<>("Login successful", HttpStatus.OK);
-//        } else {
-//            return new ResponseEntity<>("Invalid username or password", HttpStatus.UNAUTHORIZED);
-//        }
-//    }
-///////////////////////////////////
     
 
 

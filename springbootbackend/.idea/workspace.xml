@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="507f388f-5a6d-47ff-8e06-9a0b267ae3d3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../Interim/10819486_Interim.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../Interim/10819486_Interim.docx" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/../Interim/libraries.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../Interim/libraries.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../about spring.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../about spring.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../apptsx.txt" beforeDir="false" />
@@ -77,6 +78,17 @@
       <change beforePath="$PROJECT_DIR$/../springtest/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../springtest/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../springtest/src/Main.java" beforeDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/../newreactmobile/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../newreactmobile/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../newreactmobile/all/login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../newreactmobile/all/login/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../newreactmobile/all/register/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../newreactmobile/all/register/Register.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../newreactmobile/all/selectcloths/CottonScreennew.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../newreactmobile/all/selectcloths/CottonScreennew.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../newreactmobile/android/app/src/main/assets/index.android.bundle" beforeDir="false" afterPath="$PROJECT_DIR$/../newreactmobile/android/app/src/main/assets/index.android.bundle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../run android cmd'.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../run android cmd'.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sizerecom/springbootbackend/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sizerecom/springbootbackend/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sizerecom/springbootbackend/controller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sizerecom/springbootbackend/controller/RegisterController.java" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,12 +180,15 @@
   "history": [
     {
     },
+<<<<<<< Updated upstream
     {
     },
     {
     },
     {
     },
+=======
+>>>>>>> Stashed changes
     {
     },
     {

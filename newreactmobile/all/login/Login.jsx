@@ -14,13 +14,14 @@ const Login=()=> {
 
     const [loginusername, setunlog] = useState(''); 
     const [loginpassword, setpwlog] = useState('');
-    const [errorMessage, setErrorMessage] = useState('');
 
     const handleSubmit = async (event) => {
         //
         event.preventDefault();
-        const Logindetails = {
-            loginusername:loginusername,
+
+        const Logindetails = {// a obj with 2 properties
+            //to match with the property names in the backend
+            loginusername:loginusername, //leftside- from java BE, rightside- from state hook
             loginpassword:loginpassword
         };
        
@@ -68,7 +69,6 @@ const Login=()=> {
             defaultValue={loginusername} />
             <TextInput style={styles.input} placeholder="Password" onChangeText={text => setpwlog(text)}
                 defaultValue={loginpassword} secureTextEntry/>
-            {errorMessage && <p>{errorMessage}</p>}
             <TouchableOpacity style={styles.button} onPress={handleSubmit}>
                 <Text style={styles.buttonText}>Login</Text>
             </TouchableOpacity>
