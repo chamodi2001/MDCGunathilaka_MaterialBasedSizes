@@ -1,17 +1,11 @@
-<<<<<<< Updated upstream
-npx react-native run-android
-=======
+
 npx react-native run-android
 
 /////////
 npx react-native start
-<<<<<<< Updated upstream
 npx react-native run-android
 
-/////////
-=======
 
->>>>>>> Stashed changes
 ipconfig /all
 //get the IPv4
 
@@ -20,4 +14,4 @@ ALTER TABLE your_table_name AUTO_INCREMENT = 1;
 
 //dlete the raw in a table
 DELETE FROM tb_nmae WHERE id between 1 AND 15;
->>>>>>> Stashed changes
+
