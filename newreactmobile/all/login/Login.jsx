@@ -5,13 +5,11 @@ import { styles } from '../register/Registerstyles';
 import { Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import Register from '../register/Register';
-import EnterSize from '../usersize/Entersize';
 import axios from 'axios';
 
 
 const Login=()=> {
-    const navigation = useNavigation(); 
+    const navigateTo = useNavigation(); 
 
     const [loginusername, setunlog] = useState(''); 
     const [loginpassword, setpwlog] = useState('');
@@ -30,7 +28,7 @@ const Login=()=> {
         .then(output => {
             console.log(output.data);
             Alert.alert('Login successful');
-            navigation.navigate('Bottomstack'); //obj.func
+            navigateTo.navigate('EnterSize'); //obj.func
         })
         
         .catch(error => {
@@ -59,7 +57,9 @@ const Login=()=> {
               }
               else if(loginpassword.length < 4){
                   Alert.alert('Error', 'Enter more than 4 characters');
+                  navigateTo.navigate('EnterSize');
                   return;
+                  
               }
         
     };
@@ -74,7 +74,7 @@ const Login=()=> {
                 <Text style={styles.buttonText}>Login</Text>
             </TouchableOpacity>
             <Text style={styleslogin.text}>Don't have an account?</Text> 
-            <TouchableOpacity style={styleslogin.text} onPress={() => navigation.navigate('Register')}>
+            <TouchableOpacity style={styleslogin.text} onPress={() => navigateTo.navigate('Register')}>
                 <Text style={styleslogin.textsign}>Sign Up</Text>
             </TouchableOpacity>
         </View>

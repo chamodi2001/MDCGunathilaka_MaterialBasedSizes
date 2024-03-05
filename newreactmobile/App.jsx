@@ -23,41 +23,75 @@ import Register from './all/register/Register';
 import Login from './all/login/Login';
 import EnterSize from './all/usersize/Entersize'; 
 import Material from './all/selectcloths/Material';
-import CottonScreen from './all/selectcloths/CottonScreennew';
+import CottonScreennew from './all/selectcloths/CottonScreennew';
+import PolyesterScreen from './all/selectcloths/PolyesterScreen';
+import SpandexblendScreen from './all/selectcloths/Spandexblend';
+import SizeRec from './all/availability/SizeRec';
 
 import BottomNavbar from './all/bottomnav/BottomNavbar';
 // import { SafeAreaProvider } from 'react-native-safe-area-context';    
 const Stackpath = createStackNavigator(); 
 const tabnav= createBottomTabNavigator();
+const homenav= createBottomTabNavigator();
 
-
-
-const Bottomstack = () => {
-  return (
-    <tabnav.Navigator screenOptions={{headerShown: false}}>
-
-      {/* <tabnav.Screen name="EnterSize" component={EnterSize}/> */}
-      <tabnav.Screen name="Material" component={Material} 
+const HomeStack=()=>{
+  return(
+    <homenav.Navigator screenOptions={{headerShown: false}}>
+      {/* <tabnav.Screen name="Size" component={EnterSize} 
       options={{
-        headerShown: false,
         tabBarIcon: ({ focused }) => (
           <Image
-            source={require('./public/images/home1.png')}
+            source={require('./public/images/size2.png')}
+            style={{ width: 25, height: 25 }}
+          />
+        ),}}
+      />  */}
+      <homenav.Screen name="Material" component={Material} 
+      options={{
+        tabBarIcon: ({ focused }) => (
+          <Image
+            source={require('./public/images/home2.png')}
             style={{ width: 25, height: 25 }}
           />
         ),}}
       /> 
-      <tabnav.Screen name="CottonScreen" component={CottonScreen}
+
+    </homenav.Navigator>
+  );
+};
+
+///one botton navigator
+const Bottomstack = () => {
+  return (
+    <tabnav.Navigator screenOptions={{headerShown: false}}>
+
+      <tabnav.Screen name="Cotton" component={CottonScreennew}
       options={{
-        headerShown: false,
         tabBarIcon: ({ focused }) => (
           <Image
-            source={require('./public/images/cottonicon.jpg')}
-            style={{ width: 25, height: 25 }}
+            source={require('./public/images/cottonicon3.png')}
+            style={{ width: 25, height: 25 }} 
           />
         ),}}
       />
-
+      <tabnav.Screen name="Polyester" component={PolyesterScreen}
+      options={{
+        tabBarIcon: ({ focused }) => (
+          <Image
+            source={require('./public/images/polyester1.png')}
+            style={{ width: 25, height: 25 }} 
+          />
+        ),}}
+      />
+      <tabnav.Screen name="Spandexblend" component={SpandexblendScreen}
+      options={{
+        tabBarIcon: ({ focused }) => (
+          <Image
+            source={require('./public/images/spandex1.jpg')}
+            style={{ width: 25, height: 25 }} 
+          />
+        ),}}
+      />
     </tabnav.Navigator>
   );
 };
@@ -71,12 +105,15 @@ const App = () => {
           <Stackpath.Screen name="Register" component={Register} options={{ headerShown: false }}/>
           <Stackpath.Screen name="Login" component={Login} options={{ headerShown: false }}/>
           <Stackpath.Screen name="EnterSize" component={EnterSize} options={{ headerShown: false }}/>
-          <Stackpath.Screen name="Bottomstack" component={Bottomstack} />
-          {/* <Stackpath.Screen name="EnterSize" component={EnterSize} options={{ headerShown: false }}/>
-          <Stackpath.Screen name="Material" component={Material} options={{ headerShown: false }}/>
-          <Stackpath.Screen name="CottonScreennew" component={CottonScreennew} options={{ headerShown: false }}/> */}
+
+          {/* the home stack-'Mertrial' page */}
+          <Stackpath.Screen name="HomeStack" component={HomeStack} options={{ headerShown: false }}/> 
+
+          {/* after the above screens, the bottomstack screens would be loaded */}
+          <Stackpath.Screen name="Bottomstack" component={Bottomstack} options={{ headerShown: false }}/>
+
+          <Stackpath.Screen name="SizeRec" component={SizeRec} options={{ headerShown: false }}/>
          
-        
       </Stackpath.Navigator>
     </NavigationContainer>
   );

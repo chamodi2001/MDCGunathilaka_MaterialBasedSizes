@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController //has controller and Responsebody annotation
 // @controller=-can handle the req //@requestbody- return value translates to HTTP response body
-@CrossOrigin("http://192.168.1.59:8081")
+@CrossOrigin("http://192.168.186.125:8081")
 
 public class LoginController {
     @Autowired

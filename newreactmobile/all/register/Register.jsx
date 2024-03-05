@@ -11,7 +11,7 @@ import { Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const Register=()=> {
-    const navigation = useNavigation(); //property passing the usenavigation hook 
+    const navigateTo = useNavigation(); //property passing the usenavigation hook 
 
     const [username, setun] = useState(''); //to update the value of thr input field
     const [password, setpw] = useState('');
@@ -52,7 +52,7 @@ const Register=()=> {
         }
         else{
             Alert.alert('Successful', 'successfully registered');
-            navigation.navigate('Login');
+            navigateTo.navigate('Login');
             return;
         }     
     };
@@ -79,7 +79,7 @@ const Register=()=> {
             </TouchableOpacity> */}
             {/* <Button style={styles.button} title="sign up" onPress={handleSubmit} /> */}
             <Text style={styleslogin.text}>Already have an account?</Text> 
-            <TouchableOpacity style={styleslogin.text} onPress={() => navigation.navigate('Login')}>
+            <TouchableOpacity style={styleslogin.text} onPress={() => navigateTo.navigate('Login')}>
                 <Text style={styleslogin.textsign}>Sign In</Text>
             </TouchableOpacity>
         </View>

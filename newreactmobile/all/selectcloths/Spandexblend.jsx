@@ -6,8 +6,7 @@ import { Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Picker } from '@react-native-picker/picker';
 
-
-const CottonScreennew=()=> {
+const SpandexblendScreen=()=> {
     const navigation = useNavigation(); 
 
     const [selectedcloth, setselectedcloth] = useState();
@@ -16,13 +15,13 @@ const CottonScreennew=()=> {
     return (
         <View>
             <View style={stylescotton.subcontainer}>
-                <Text style={stylescotton.title}>Cotton Material</Text>
+                <Text style={stylescotton.title}>Spandexblend Material</Text>
             </View>
             <View style={stylescotton.subcontainerMaterial}>
-                <Text style={stylescotton.title}>Cotton </Text>
+                <Text style={stylescotton.title}>Spandexblend </Text>
             </View>
         </View>
     );
     };
 
-    export default CottonScreennew;
+    export default SpandexblendScreen;

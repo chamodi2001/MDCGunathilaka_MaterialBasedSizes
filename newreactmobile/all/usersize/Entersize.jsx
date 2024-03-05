@@ -6,7 +6,7 @@ import { Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const EnterSize=()=>{
-    const navigation = useNavigation();
+    const navigateTo = useNavigation();
 
     const [chestwidth,setcw]=useState('');
 
@@ -21,14 +21,14 @@ const EnterSize=()=>{
         }
         else{
             // Alert.alert('Successful');
-            navigation.navigate('Material');
+            navigateTo.navigate('HomeStack'); //obj.func
             return;
         }
     };
 
     return(
         <View style={styles.container}>
-            <Text style={styles.title}>User Chest Size</Text>
+            <Text style={stylessize.title}>User Chest Size</Text>
             <TextInput style={styles.input} placeholder="Chest Size" onChangeText={text => setcw(text)} 
             defaultValue={chestwidth} />
             <TouchableOpacity style={stylessize.button} onPress={handleSubmit}>
