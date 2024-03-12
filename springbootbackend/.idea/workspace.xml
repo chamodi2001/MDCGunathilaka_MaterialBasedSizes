@@ -6,33 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="07baf646-8557-4b62-a59a-8b23b15ab10e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../Interim/10819486_Interim.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../Interim/10819486_Interim.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../image stroing test.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../login authentication.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../navbar simple.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../newreactmobile/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../newreactmobile/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../newreactmobile/all/login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../newreactmobile/all/login/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../newreactmobile/all/register/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../newreactmobile/all/register/Register.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../newreactmobile/all/selectcloths/PolyesterScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../newreactmobile/all/selectcloths/PolyesterScreen.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../newreactmobile/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../newreactmobile/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../newreactmobile/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../newreactmobile/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project proposal/10819486_Proposal.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../project proposal/10819486_Proposal.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../run android cmd'.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../run android cmd'.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring creating a user.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springbootbackend.rar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Interim/~$819486_Interim.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../Interim/~$819486_Interim.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Interim/~WRL0005.tmp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sizerecom/springbootbackend/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sizerecom/springbootbackend/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sizerecom/springbootbackend/controller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sizerecom/springbootbackend/controller/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sizerecom/springbootbackend/model/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sizerecom/springbootbackend/model/Register.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sizerecom/springbootbackend/controller/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sizerecom/springbootbackend/controller/RegisterController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sizerecom/springbootbackend/model/Register.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sizerecom/springbootbackend/model/Register.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springtest/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springtest/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springtest/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springtest/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springtest/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springtest/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../txt.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../usersinMySQL.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
