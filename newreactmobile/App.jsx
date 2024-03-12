@@ -18,6 +18,7 @@ import {Image } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack'; //stack of screens to navigate
 import { NavigationContainer } from '@react-navigation/native'; //to wrap the stack navigator
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
 import Loading from './all/loading/Loading';
 import Register from './all/register/Register';
 import Login from './all/login/Login';
@@ -27,6 +28,7 @@ import CottonScreennew from './all/selectcloths/CottonScreennew';
 import PolyesterScreen from './all/selectcloths/PolyesterScreen';
 import SpandexblendScreen from './all/selectcloths/Spandexblend';
 import SizeRec from './all/availability/SizeRec';
+import Userfeedback from './all/feedback/Userfeedback';
 
 import BottomNavbar from './all/bottomnav/BottomNavbar';
 // import { SafeAreaProvider } from 'react-native-safe-area-context';    
@@ -104,6 +106,7 @@ const App = () => {
           <Stackpath.Screen name="Loading" component={Loading} options={{ headerShown: false }}/>
           <Stackpath.Screen name="Register" component={Register} options={{ headerShown: false }}/>
           <Stackpath.Screen name="Login" component={Login} options={{ headerShown: false }}/>
+          <Stackpath.Screen name="Userfeedback" component={Userfeedback} options={{ headerShown: false }}/>
           <Stackpath.Screen name="EnterSize" component={EnterSize} options={{ headerShown: false }}/>
 
           {/* the home stack-'Mertrial' page */}

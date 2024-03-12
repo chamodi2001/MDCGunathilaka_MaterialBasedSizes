@@ -11,7 +11,7 @@ import java.util.List;
 
 
 @RestController
-@CrossOrigin("http://192.168.186.125:8081")
+@CrossOrigin("http://192.168.1.59:8081")
 //@RequestMapping("/api")
 public class RegisterController {
    @Autowired //instance or object of the RegisterRepo can be used in the RegisterController(this class)

@@ -1,0 +1,14 @@
+ @PostMapping("/userfeedback")
+    //responese entity is a class that where contains the full http req & create the response
+    //but Request body- mostly uses in post annotation
+    public String feedbackmethod(@RequestBody Feedback feedbackres){
+        String userSelectedValue=Feedback.getUserselectedOption();
+
+        //if the user's option or user selected option is,
+        // equals to 'first'
+        if (userSelectedValue.equals("first")){
+
+        }
+        //else if it is other options such as,
+        return "Selection handled";
+    }

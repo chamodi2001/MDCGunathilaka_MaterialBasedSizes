@@ -14,7 +14,8 @@ const PolyesterScreen=()=> {
     const [images, setImages] = useState(null);
 
     useEffect(() => { //will render the page firs, then loads whats inside
-        axios.get('http://192.168.1.59:8080/imageList')
+        axios.get('http://192.168.186.125:8080/imageList')
+        // axios.get('http://192.168.1.59:8080/imageList')
             .then((output) => {
                 if (output.data) { //checking whether response/output data is null or 0
                     let images = output.data.map(base64String => 'data:image/png;base64,' + base64String);
@@ -24,7 +25,7 @@ const PolyesterScreen=()=> {
     }, []);
 
     const handleImage = () => {
-        navigateTo.navigate('SizeRec'); 
+        navigateTo.navigate('SizeRec');
     };
 
     return (

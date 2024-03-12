@@ -15,3 +15,9 @@ ALTER TABLE your_table_name AUTO_INCREMENT = 1;
 //dlete the raw in a table
 DELETE FROM tb_nmae WHERE id between 1 AND 15;
 
+//deleting all the recodes
+//It seems like you're trying to delete all records from a table in MySQL while in safe mode. Safe mode prevents you from executing DELETE or UPDATE commands without specifying a WHERE clause that uses a key column. This is to prevent accidental deletion or modification of data.  If you're sure you want to delete all records from the table, you can disable safe mode temporarily. Here's how you can do it:
+
+SET SQL_SAFE_UPDATES = 0;
+DELETE FROM register;
+SET SQL_SAFE_UPDATES = 1;

@@ -14,16 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController //has controller and Responsebody annotation
 // @controller=-can handle the req //@requestbody- return value translates to HTTP response body
-@CrossOrigin("http://192.168.186.125:8081")
+@CrossOrigin("http://192.168.1.59:8081")
 
 public class LoginController {
     @Autowired
-//    private LoginRepo loginRepoObj;
-
-//    @PostMapping("/login")
-//    Login oldUser(@RequestBody Login oldUser){
-//        return loginRepoObj.save(oldUser);
-//    }
 
     private RegisterRepo registerRepoObj;
 @PostMapping("/userlogin")
@@ -33,9 +27,12 @@ public ResponseEntity<String> loginmethod(@RequestBody Login oldUser) {
     //call the Register
     Register existingUser = registerRepoObj.findByUsername(oldUser.getLoginusername());
 
+    //if the it is not a existing user, so the password and th username of old user doesnot match,
     if (existingUser != null && existingUser.getPassword().equals(oldUser.getLoginpassword())) {
+        //if true- it returns a http rsponse saying login successfull
         return new ResponseEntity<>("Login Successful", HttpStatus.OK);
     } else {
+        //if false then return the error msg
         return new ResponseEntity<>("Wrong Password or Username", HttpStatus.UNAUTHORIZED);
     }
 }

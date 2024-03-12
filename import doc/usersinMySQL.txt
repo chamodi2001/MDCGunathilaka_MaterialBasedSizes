@@ -6,3 +6,5 @@ old pw//
 chamodi123&
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'chamodi123&';
 
+//set the auto incrementing id to 1
+ALTER TABLE register AUTO_INCREMENT = 1;

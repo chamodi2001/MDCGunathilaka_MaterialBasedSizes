@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import { Text, View, TextInput, Button,TouchableOpacity } from 'react-native';
+import { Text, View, TextInput, Button,TouchableOpacity,ImageBackground } from 'react-native';
 import { styles } from './Registerstyles';
 import {Login} from '../login/Login';
 import axios from 'axios';
@@ -24,7 +24,8 @@ const Register=()=> {
         const Register = { username, password, age, chestwidth };
         
         try {
-        const output = await axios.post('http://192.168.1.59:8080/user', Register);
+        const output = await axios.post('http://192.168.186.125:8080/user', Register);
+        // const output = await axios.post('http://192.168.1.59:8080/user', Register); //slt wifi
         window.alert('Successfully added data to the database');
         console.log(output.data);
         } catch (error) {
@@ -58,32 +59,27 @@ const Register=()=> {
     };
 
     return (
-        // <ImageBackground source={require('./back.jpg')} style={styles.image}>
-        <View style={styles.container}>
-            <Text style={styles.title}>Sign Up</Text>
-            <TextInput style={styles.input} onChangeText={text => setun(text)}
-            defaultValue={username} placeholder="Username" required/> 
-            {/* initial value of the input field */}
-            <TextInput style={styles.input} onChangeText={text => setpw(text)}
-                defaultValue={password} placeholder="Password" secureTextEntry/>
-            <TextInput style={styles.input} onChangeText={text => setage(text)}
-                defaultValue={age} placeholder="Age"/>
-            <TextInput style={styles.input} onChangeText={text => setcw(text)}
-                defaultValue={chestwidth} placeholder="Chest Width"/>
-            {/* when click onthe btn, navigate to the login page */}
-            <TouchableOpacity style={styles.button} onPress={handleSubmit}>
-                <Text style={styles.buttonText}>Sign Up</Text>
-            </TouchableOpacity>
-            {/* <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Login')}>
-                <Text style={styles.buttonText}>Sign Up</Text>
-            </TouchableOpacity> */}
-            {/* <Button style={styles.button} title="sign up" onPress={handleSubmit} /> */}
-            <Text style={styleslogin.text}>Already have an account?</Text> 
-            <TouchableOpacity style={styleslogin.text} onPress={() => navigateTo.navigate('Login')}>
-                <Text style={styleslogin.textsign}>Sign In</Text>
-            </TouchableOpacity>
-        </View>
-        // </ImageBackground>
+        // <ImageBackground source={require('D:\background/two.jpg')} style={{width: '100%', height: '100%'}}>
+            <View style={styles.container}>
+                <Text style={styles.title}>Sign Up</Text>
+                <TextInput style={styles.input} onChangeText={text => setun(text)}
+                defaultValue={username} placeholder="Username" required/> 
+                {/* initial value of the input field */}
+                <TextInput style={styles.input} onChangeText={text => setpw(text)}
+                    defaultValue={password} placeholder="Password" secureTextEntry/>
+                <TextInput style={styles.input} onChangeText={text => setage(text)}
+                    defaultValue={age} placeholder="Age"/>
+
+                {/* when click onthe btn, navigate to the login page */}
+                <TouchableOpacity style={styles.button} onPress={handleSubmit}>
+                    <Text style={styles.buttonText}>Sign Up</Text>
+                </TouchableOpacity>
+                <Text style={styleslogin.text}>Already have an account?</Text> 
+                <TouchableOpacity style={styleslogin.text} onPress={() => navigateTo.navigate('Login')}>
+                    <Text style={styleslogin.textsign}>Sign In</Text>
+                </TouchableOpacity>
+            </View>
+        // </ImageBackground> 
     );
     };
 
