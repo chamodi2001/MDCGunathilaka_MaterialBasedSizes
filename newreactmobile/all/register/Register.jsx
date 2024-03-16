@@ -5,7 +5,6 @@ import {Login} from '../login/Login';
 import axios from 'axios';
 import {styleslogin} from '../login/Loginstyles';
 
-
 //
 import { Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
@@ -24,8 +23,8 @@ const Register=()=> {
         const Register = { username, password, age, chestwidth };
         
         try {
-        const output = await axios.post('http://192.168.186.125:8080/user', Register);
-        // const output = await axios.post('http://192.168.1.59:8080/user', Register); //slt wifi
+        // const output = await axios.post('http://192.168.186.125:8080/user', Register);
+        const output = await axios.post('http://192.168.1.59:8080/user', Register); //slt wifi
         window.alert('Successfully added data to the database');
         console.log(output.data);
         } catch (error) {
@@ -50,6 +49,10 @@ const Register=()=> {
         if(isNaN(age) || age<0 || age>100){
             Alert.alert('Error', 'Enter a valid age');
             return;
+        }chestwidth
+        if(isNaN(chestwidth)) {
+            Alert.alert('Error', 'Enter a chest width');
+            return;
         }
         else{
             Alert.alert('Successful', 'successfully registered');
@@ -59,7 +62,7 @@ const Register=()=> {
     };
 
     return (
-        // <ImageBackground source={require('D:\background/two.jpg')} style={{width: '100%', height: '100%'}}>
+          <ImageBackground source={require('../../public/images/background/three.jpg')} style={{width: '100%', height: '100%'}}> 
             <View style={styles.container}>
                 <Text style={styles.title}>Sign Up</Text>
                 <TextInput style={styles.input} onChangeText={text => setun(text)}
@@ -69,6 +72,8 @@ const Register=()=> {
                     defaultValue={password} placeholder="Password" secureTextEntry/>
                 <TextInput style={styles.input} onChangeText={text => setage(text)}
                     defaultValue={age} placeholder="Age"/>
+                <TextInput style={styles.input} onChangeText={text => setage(text)}
+                defaultValue={chestwidth} placeholder="Chest Width"/>
 
                 {/* when click onthe btn, navigate to the login page */}
                 <TouchableOpacity style={styles.button} onPress={handleSubmit}>
@@ -79,7 +84,7 @@ const Register=()=> {
                     <Text style={styleslogin.textsign}>Sign In</Text>
                 </TouchableOpacity>
             </View>
-        // </ImageBackground> 
+         </ImageBackground> 
     );
     };
 

@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
     height: '100%',
     width: '100%',
     // backgroundColor: '#FDFAFA', e4c1f9,fff0f3.e0b1cb
-    backgroundColor: '#FDFAFA',
+    // backgroundColor: '#FDFAFA',
     // justifyContent: 'flex-start',
     alignItems: 'center',
 

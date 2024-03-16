@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import { Text, View, TextInput, Button, TouchableOpacity } from 'react-native';
+import { Text, View, TextInput, Button, TouchableOpacity, ImageBackground} from 'react-native';
 import { stylesmaterial } from './Materialstyles';
 import { styles } from '../register/Registerstyles';
 import { Alert } from 'react-native';
@@ -26,6 +26,7 @@ const Material=()=> {
       };
 
     return (
+        <ImageBackground source={require('../../public/images/background/three.jpg')} style={{width: '100%', height: '100%'}}>
         <View >
             <Text style={styles.title}>Select Clothing Material</Text>
             <View style={stylesmaterial.subcontainer}>
@@ -43,6 +44,7 @@ const Material=()=> {
             </View>
             
         </View>
+        </ImageBackground>
     );
     };
 

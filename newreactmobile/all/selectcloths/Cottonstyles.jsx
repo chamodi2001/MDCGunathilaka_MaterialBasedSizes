@@ -25,7 +25,7 @@ export const stylescotton = StyleSheet.create({
   },
   title:{
     color: '#414833',
-    // fontWeight: 'bold',
+    fontWeight: 'bold',
     textAlign: 'center',
     fontSize: 25,
     fontStyle: 'italic',

@@ -29,6 +29,8 @@ import PolyesterScreen from './all/selectcloths/PolyesterScreen';
 import SpandexblendScreen from './all/selectcloths/Spandexblend';
 import SizeRec from './all/availability/SizeRec';
 import Userfeedback from './all/feedback/Userfeedback';
+import Paypal from './all/payment/Paypal';
+
 
 import BottomNavbar from './all/bottomnav/BottomNavbar';
 // import { SafeAreaProvider } from 'react-native-safe-area-context';    
@@ -107,7 +109,7 @@ const App = () => {
           <Stackpath.Screen name="Register" component={Register} options={{ headerShown: false }}/>
           <Stackpath.Screen name="Login" component={Login} options={{ headerShown: false }}/>
           <Stackpath.Screen name="Userfeedback" component={Userfeedback} options={{ headerShown: false }}/>
-          <Stackpath.Screen name="EnterSize" component={EnterSize} options={{ headerShown: false }}/>
+          {/* <Stackpath.Screen name="EnterSize" component={EnterSize} options={{ headerShown: false }}/> */}
 
           {/* the home stack-'Mertrial' page */}
           <Stackpath.Screen name="HomeStack" component={HomeStack} options={{ headerShown: false }}/> 
@@ -116,6 +118,7 @@ const App = () => {
           <Stackpath.Screen name="Bottomstack" component={Bottomstack} options={{ headerShown: false }}/>
 
           <Stackpath.Screen name="SizeRec" component={SizeRec} options={{ headerShown: false }}/>
+          <Stackpath.Screen name="Paypal" component={Paypal} options={{ headerShown: false }}/>
          
       </Stackpath.Navigator>
     </NavigationContainer>

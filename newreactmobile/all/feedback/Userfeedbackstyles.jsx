@@ -3,11 +3,12 @@ import { StyleSheet } from 'react-native';
 export const stylesfeedback = StyleSheet.create({
   subtitleF:{
     color: '#414833',
-    fontWeight: 'bold',
+    fontWeight: 'italic',
+    fontStyle:'italic',
     textAlign: 'center',
     fontSize: 20,
     marginTop: 5,
-    padding: 10,
+    padding: 0,
   },
 
   subtitleS:{
@@ -17,8 +18,8 @@ export const stylesfeedback = StyleSheet.create({
     fontSize: 20,
     fontStyle: 'italic',
     marginTop: 10,
-    margin: 5,
-    padding: 10,
+    margin: 0,
+    padding: 0,
   },
 
   title:{
@@ -30,7 +31,7 @@ export const stylesfeedback = StyleSheet.create({
     marginTop: 30,
     margin: 5,
     padding: 10,
-    color:'#9d4edd',
+    // color:'#9d4edd',
   },
   textsign:{
     textAlign:'right',

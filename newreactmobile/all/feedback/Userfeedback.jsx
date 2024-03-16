@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import { Text, View, TextInput, Button, TouchableOpacity, ScrollView } from 'react-native';
+import { Text, View, TextInput, Button, TouchableOpacity, ScrollView} from 'react-native';
 import { stylesfeedback } from './Userfeedbackstyles';
 import { styleslogin } from '../login/Loginstyles';
 import { styles } from '../register/Registerstyles';
@@ -43,18 +43,19 @@ const Userfeedback=()=> {
               }
                 else {
                     Alert.alert('Successful', 'Thank you for your feedback');
-                    navigateTo.navigate('EnterSize');
+                    navigateTo.navigate('HomeStack');
                     return;
             }
         };              
     
 
     return (
+        <ImageBackground source={require('../../public/images/background/three.jpg')} style={{width: '100%', height: '100%'}}>
         <View> 
             <ScrollView>
                 <View style={stylescotton.subcontainer}>
-                    <Text style={stylesfeedback.subtitleF}>If New User,</Text>
-                    <Text style={stylesfeedback.subtitleS}> please give a little feedback about your past purchases made from this brand</Text>
+                    <Text style={stylesfeedback.subtitleF}>If haven't give a feedback,</Text>
+                    <Text style={stylesfeedback.subtitleS}> Please give a little feedback about your past purchases made from this brand!</Text>
                 </View>
                 <View style={styles.container}>
                     <Text style={stylesfeedback.title}>Enter Chest Width</Text>
@@ -79,13 +80,14 @@ const Userfeedback=()=> {
                     </TouchableOpacity>
                     
                     {/* skip and just continue using the application */}
-                    <TouchableOpacity onPress={() => navigateTo.navigate('EnterSize')}>
+                    <TouchableOpacity onPress={() => navigateTo.navigate('Material')}>
                         <Text style={stylesfeedback.textsign}>Skip</Text>
                     </TouchableOpacity>
                     
                 </View>
             </ScrollView>
         </View>
+        </ImageBackground>
     );
     };
 
