@@ -46,6 +46,7 @@ const Register=()=> {
                 Alert.alert('Error', 'Enter more than 4 characters');
                 return;
             }
+        //age must be between 0 to 100
         if(isNaN(age) || age<0 || age>100){
             Alert.alert('Error', 'Enter a valid age');
             return;
@@ -62,7 +63,7 @@ const Register=()=> {
     };
 
     return (
-        //putting a image background
+        // putting a image background 
           <ImageBackground source={require('../../public/images/background/three.jpg')} style={{width: '100%', height: '100%'}}> 
             <View style={styles.container}>
                 <Text style={styles.title}>Sign Up</Text>
@@ -70,13 +71,15 @@ const Register=()=> {
                 defaultValue={username} placeholder="Username" required/> 
                 {/* default value would the current state of the textbox, while set() method would save the new value */}
                 <TextInput style={styles.input} onChangeText={text => setpw(text)}
-                    defaultValue={password} placeholder="Password" secureTextEntry/> {/*secureTextEntry- would hide the password when typing*/}
+                    defaultValue={password} placeholder="Password" secureTextEntry/> 
+                    {/*secureTextEntry- would hide the password when typing*/}
+                    
                 <TextInput style={styles.input} onChangeText={text => setage(text)}
                     defaultValue={age} placeholder="Age"/>
                 <TextInput style={styles.input} onChangeText={text => setage(text)}
                 defaultValue={chestwidth} placeholder="Chest Width"/>
 
-                {/* when click onthe btn, navigate to the login page */}
+               
                 <TouchableOpacity style={styles.button} onPress={handleSubmit}>
                     <Text style={styles.buttonText}>Sign Up</Text>
                 </TouchableOpacity>
