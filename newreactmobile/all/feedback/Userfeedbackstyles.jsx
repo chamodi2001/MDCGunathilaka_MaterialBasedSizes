@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 export const stylesfeedback = StyleSheet.create({
   subtitleF:{
     color: '#414833',
-    fontWeight: 'italic',
+    fontWeight: 'bold',
     fontStyle:'italic',
     textAlign: 'center',
     fontSize: 20,

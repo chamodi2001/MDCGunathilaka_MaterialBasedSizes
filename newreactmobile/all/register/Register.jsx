@@ -62,14 +62,15 @@ const Register=()=> {
     };
 
     return (
+        //putting a image background
           <ImageBackground source={require('../../public/images/background/three.jpg')} style={{width: '100%', height: '100%'}}> 
             <View style={styles.container}>
                 <Text style={styles.title}>Sign Up</Text>
                 <TextInput style={styles.input} onChangeText={text => setun(text)}
                 defaultValue={username} placeholder="Username" required/> 
-                {/* initial value of the input field */}
+                {/* default value would the current state of the textbox, while set() method would save the new value */}
                 <TextInput style={styles.input} onChangeText={text => setpw(text)}
-                    defaultValue={password} placeholder="Password" secureTextEntry/>
+                    defaultValue={password} placeholder="Password" secureTextEntry/> {/*secureTextEntry- would hide the password when typing*/}
                 <TextInput style={styles.input} onChangeText={text => setage(text)}
                     defaultValue={age} placeholder="Age"/>
                 <TextInput style={styles.input} onChangeText={text => setage(text)}
@@ -80,6 +81,7 @@ const Register=()=> {
                     <Text style={styles.buttonText}>Sign Up</Text>
                 </TouchableOpacity>
                 <Text style={styleslogin.text}>Already have an account?</Text> 
+                {/* if the user alredy have an account can just go to the login page */}
                 <TouchableOpacity style={styleslogin.text} onPress={() => navigateTo.navigate('Login')}>
                     <Text style={styleslogin.textsign}>Sign In</Text>
                 </TouchableOpacity>

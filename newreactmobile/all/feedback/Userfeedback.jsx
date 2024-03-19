@@ -15,7 +15,8 @@ import axios from 'axios';
 const Userfeedback=()=> {
     const navigateTo = useNavigation(); 
 
-    const [usersize, setUsersize] = useState('Size6'); //for radio btn
+    const [usersize, setUsersize] = useState('Size6'); //for radio btn 
+    //the pre saved value would be size 6
     const [material, setMaterial] =useState();
   
     const handleRadiobtn = (selectedCW) => { //the func would be updated with new value, which user entered
@@ -43,7 +44,7 @@ const Userfeedback=()=> {
               }
                 else {
                     Alert.alert('Successful', 'Thank you for your feedback');
-                    navigateTo.navigate('HomeStack');
+                    navigateTo.navigate('HomeStack'); //would navigate to the stack called homeStack.
                     return;
             }
         };              
