@@ -1,24 +1,20 @@
-import React from 'react';
-import PayPal from 'react-native-paypal';
-import { useNavigation } from 'react-router-dom';
+// import React from 'react';
+// import { WebView } from 'react-native-webview';
 
-const App = ({route}) => {
-    const { material_type } = route.params;
-    //databse conn
-  return (
-    <PayPal
-      clientId="YOUR_CLIENT_ID"
-      environment={PayPal.SANDBOX}
-      intent={PayPal.SALE}
-      price="9.99"
-      currency="USD"
-      description="Your description here"
-      onSuccess={(payment) => console.log('Payment succeeded', payment)}
-      onCancelled={() => console.log('Payment cancelled')}/> 
-    // const nav=useNavigation();
-    // nav.navigate("Screen",{material_price,material_type})
-  );
-};
 
-export default App;
+// export default function Paypal() {
+//   return (
+//     <WebView
+//       source={{ uri: 'https://your-backend-url/paypal-payment' }}
+//       onNavigationStateChange={(navState) => {
+//         // handle PayPal redirects
+//         if (navState.url.includes('https://your-backend-url/payment-success')) {
+//           // Payment was successful. You can navigate to a different screen here.
+//         } else if (navState.url.includes('https://your-backend-url/payment-cancel')) {
+//           // Payment was cancelled. You can navigate to a different screen here.
+//         }
+//       }}
+//     />
+//   );
+// }
 

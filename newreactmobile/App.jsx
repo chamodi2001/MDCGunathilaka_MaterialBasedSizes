@@ -69,15 +69,16 @@ const Bottomstack = () => {
   return (
     <tabnav.Navigator screenOptions={{headerShown: false}}>
 
-      <tabnav.Screen name="Cotton" component={CottonScreennew}
-      options={{
-        tabBarIcon: ({ focused }) => (
-          <Image
-            source={require('./public/images/cottonicon3.png')}
-            style={{ width: 25, height: 25 }} 
-          />
-        ),}}
+      <tabnav.Screen name="Spandexblend" component={SpandexblendScreen}
+            options={{
+              tabBarIcon: ({ focused }) => (
+                <Image
+                  source={require('./public/images/spandex1.jpg')}
+                  style={{ width: 25, height: 25 }} 
+                />
+              ),}}
       />
+      
       <tabnav.Screen name="Polyester" component={PolyesterScreen}
       options={{
         tabBarIcon: ({ focused }) => (
@@ -87,11 +88,12 @@ const Bottomstack = () => {
           />
         ),}}
       />
-      <tabnav.Screen name="Spandexblend" component={SpandexblendScreen}
+      
+      <tabnav.Screen name="Cotton" component={CottonScreennew}
       options={{
         tabBarIcon: ({ focused }) => (
           <Image
-            source={require('./public/images/spandex1.jpg')}
+            source={require('./public/images/cottonicon3.png')}
             style={{ width: 25, height: 25 }} 
           />
         ),}}

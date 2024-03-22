@@ -23,8 +23,8 @@ const Register=()=> {
         const Register = { username, password, age, chestwidth };
         
         try {
-        // const output = await axios.post('http://192.168.186.125:8080/user', Register);
-        const output = await axios.post('http://192.168.1.59:8080/user', Register); //slt wifi
+        const output = await axios.post('http://192.168.76.125:8080/user', Register);
+        // const output = await axios.post('http://192.168.1.59:8080/user', Register); //slt wifi
         window.alert('Successfully added data to the database');
         console.log(output.data);
         } catch (error) {
@@ -76,7 +76,7 @@ const Register=()=> {
                     
                 <TextInput style={styles.input} onChangeText={text => setage(text)}
                     defaultValue={age} placeholder="Age"/>
-                <TextInput style={styles.input} onChangeText={text => setage(text)}
+                <TextInput style={styles.input} onChangeText={text => setcw(text)}
                 defaultValue={chestwidth} placeholder="Chest Width"/>
 
                

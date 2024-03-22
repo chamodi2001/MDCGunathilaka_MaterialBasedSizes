@@ -27,8 +27,7 @@ public class ImageSaveController {
         //consider the file path is a String
         List<String> imagePaths = List.of("D:\\desktop D\\3rd year\\PUSL3190_MDCGunathilaka\\newreactmobile\\public\\images\\poly/1.jpg",
                 "D:\\desktop D\\3rd year\\PUSL3190_MDCGunathilaka\\newreactmobile\\public\\images\\poly/2.jpg",
-                "D:\\desktop D\\3rd year\\PUSL3190_MDCGunathilaka\\newreactmobile\\public\\images\\poly/3.jpg",
-                "D:\\desktop D\\3rd year\\PUSL3190_MDCGunathilaka\\newreactmobile\\public\\images\\poly/4.jpg");
+                "D:\\desktop D\\3rd year\\PUSL3190_MDCGunathilaka\\newreactmobile\\public\\images\\poly/3.jpg");
 
         //converts the file paths into Base64 string
         //map func would give a list,
@@ -56,21 +55,5 @@ public class ImageSaveController {
         return ImageRepoObj.findById(id)
                 .orElseThrow(() -> new RuntimeException("Image not found with id " + id));
     }
-
-    //old
-////    @GetMapping("/{id}")
-////    public ResponseEntity<Image> getImage(@PathVariable Long id) {
-////        return ImageRepoObj.findById(id)
-////        Image imageobj = ImageRepoObj.findById(id);
-////        if (imageobj != null) {
-////        return new ResponseEntity<>(imageobj, HttpStatus.OK);
-////    } else {
-////        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-////    }
-////}
-//    @GetMapping("/{id}")
-//    public Image getItemid(@PathVariable Long id) {
-//        return ImageRepoObj.findById(id)
-//                .orElseThrow(() -> new RuntimeException("Image not found with id " + id));
-//    }
+    
 }

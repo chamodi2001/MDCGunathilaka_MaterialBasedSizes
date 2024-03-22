@@ -25,8 +25,8 @@ const Login=()=> {
             loginpassword:loginpassword
         };
        
-        // await axios.post('http://192.168.186.125:8080/userlogin', Logindetails)
-        await axios.post('http://192.168.1.59:8080/userlogin', Logindetails) //slt wifi
+        await axios.post('http://192.168.76.125:8080/userlogin', Logindetails)
+        // await axios.post('http://192.168.1.59:8080/userlogin', Logindetails) //slt wifi
         .then(output => {
             console.log(output.data);
             Alert.alert('Login successful');

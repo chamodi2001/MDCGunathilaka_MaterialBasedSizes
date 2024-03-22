@@ -7,6 +7,7 @@ import { Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Picker } from '@react-native-picker/picker';
 import axios from 'axios';
+
 //saving the path of images 
 const PolyesterScreen=()=> {
     const navigateTo = useNavigation(); 
@@ -14,8 +15,8 @@ const PolyesterScreen=()=> {
     const [images, setImages] = useState(null);
 
     useEffect(() => { //will render the page firs, then loads whats inside
-        // axios.get('http://192.168.186.125:8080/imageList')
-        axios.get('http://192.168.1.59:8080/images/list') //slt
+        axios.get('http://192.168.76.125:8080/images/list')
+        // axios.get('http://192.168.1.59:8080/images/list') //slt
             .then((output) => {
                 if (output.data) { //checking whether response/output data is null or 0
                     let images = output.data.map(base64String => 'data:image/png;base64,' + base64String);
@@ -25,7 +26,8 @@ const PolyesterScreen=()=> {
     }, []);
 
     const handleImage = (id) => {
-        axios.get(`http://192.168.1.59:8080/images/${id}`)
+        axios.get(`http://192.168.76.125:8080/images/${id}`)
+        // axios.get(`http://192.168.1.59:8080/images/${id}`) //slt
         .then((output) => {
                  if (output.data) {
                 let itemid=output.data.itemid;
@@ -34,7 +36,7 @@ const PolyesterScreen=()=> {
 
                 //displays the item id that clicked throgh the console log
                 console.log("ITEM INDEX CLICKED: ",id);
-                navigateTo.navigate('SizeRec', { itemid:itemid, price: price, stock: stock }); //
+                navigateTo.navigate('SizeRec', { itemid:itemid, price: price, stock: stock }); 
             }
         })
         .catch((error) => {
@@ -47,10 +49,11 @@ const PolyesterScreen=()=> {
             <View style={stylescotton.subcontainer}>
                 <Text style={stylescotton.title}>Polyester Material</Text>
             </View>
-            <View style={stylescotton.subcontainerMaterial} >
+            <ScrollView style={{width: '100%', height: '100%'}}>
+            <View style={stylescotton.subcontainerMaterial}>
                 <Text style={stylescotton.title}>Polyester </Text>
                 {/* <Image source={{ uri: image }} style={{width: 100, height: 100}} /> */}
-                <ScrollView>
+                
                     {images === null //inline if conditional statement, so if the images are 0 or not there,
                         ? <Text>Loading...</Text> //if no
 
@@ -63,8 +66,9 @@ const PolyesterScreen=()=> {
                             </TouchableOpacity>
                         ))
                     }
-                </ScrollView>
+                
             </View>
+            </ScrollView>
         </View>
     );
     };

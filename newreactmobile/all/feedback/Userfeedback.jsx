@@ -26,8 +26,8 @@ const Userfeedback=()=> {
 
         const handleSubmit = () => {
             const feedbacks = { selectedCW:usersize, material};
-            axios.post('http://192.168.186.125:8080/userfeedback', feedbacks) //redmi wifi
-            // axios.post('http://192.168.1.59:8080/userfeedback', feedbackdetails) //slt wifi
+            axios.post('http://192.168.76.125:8080/userfeedback', feedbacks) //redmi wifi
+            // axios.post('http://192.168.1.59:8080/userfeedback', feedbacks) //slt wifi
 
             .then(output => {
                 console.log('Feedback submitted:',output.data);
