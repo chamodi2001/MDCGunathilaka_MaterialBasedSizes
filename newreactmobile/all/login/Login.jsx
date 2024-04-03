@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import { Text, View, TextInput, Button, TouchableOpacity } from 'react-native';
+import { Text, View, TextInput, Button, TouchableOpacity,ImageBackground } from 'react-native';
 import { styleslogin } from './Loginstyles';
 import { styles } from '../register/Registerstyles';
 import { Alert } from 'react-native';
@@ -25,7 +25,7 @@ const Login=()=> {
             loginpassword:loginpassword
         };
        
-        await axios.post('http://192.168.186.125:8080/userlogin', Logindetails)
+        await axios.post('http://192.168.76.125:8080/userlogin', Logindetails)
         // await axios.post('http://192.168.1.59:8080/userlogin', Logindetails) //slt wifi
         .then(output => {
             console.log(output.data);
@@ -59,6 +59,7 @@ const Login=()=> {
         
     };
     return (
+        <ImageBackground source={require('../../public/images/background/three.jpg')} style={{width: '100%', height: '100%'}}>
         <View style={styles.container}>
             <Text style={styleslogin.title}>Login</Text>
             <TextInput style={styles.input} placeholder="Username" onChangeText={text => setunlog(text)}
@@ -77,6 +78,7 @@ const Login=()=> {
                 <Text style={styleslogin.textsign}>Sign Up</Text>
             </TouchableOpacity>
         </View>
+        </ImageBackground>
     );
     };
 

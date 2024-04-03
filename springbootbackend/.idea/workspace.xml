@@ -5,7 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07baf646-8557-4b62-a59a-8b23b15ab10e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../newreactmobile/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../newreactmobile/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../newreactmobile/all/feedback/Userfeedback.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../newreactmobile/all/feedback/Userfeedback.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../newreactmobile/all/login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../newreactmobile/all/login/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../newreactmobile/all/payment/Paypal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../newreactmobile/all/payment/Paypal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../newreactmobile/all/register/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../newreactmobile/all/register/Register.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../newreactmobile/all/selectcloths/CottonScreennew.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../newreactmobile/all/selectcloths/CottonScreennew.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../newreactmobile/all/selectcloths/PolyesterScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../newreactmobile/all/selectcloths/PolyesterScreen.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../newreactmobile/all/selectcloths/Spandexblend.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../newreactmobile/all/selectcloths/Spandexblend.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sizerecom/springbootbackend/controller/ImageController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sizerecom/springbootbackend/controller/ImageSaveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sizerecom/springbootbackend/controller/ImageSaveController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -50,7 +60,8 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;testdev&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   }
 }</component>
   <component name="RunManager">
