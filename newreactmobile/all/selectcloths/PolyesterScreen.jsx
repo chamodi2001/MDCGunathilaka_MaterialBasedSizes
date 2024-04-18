@@ -14,9 +14,9 @@ const PolyesterScreen=()=> {
 
     const [images, setImages] = useState(null);
 
-    useEffect(() => { //will render the page firs, then loads whats inside
-        axios.get('http://192.168.76.125:8080/images/list')
-        // axios.get('http://192.168.1.59:8080/images/list') //slt
+    useEffect(() => { //will render the pictures fro,m the server to display on the application
+        // axios.get('http://192.168.239.125:8080/images/list')
+        axios.get('http://192.168.1.59:8080/images/list') //slt
             .then((output) => {
                 if (output.data) { //checking whether response/output data is null or 0
                     let images = output.data.map(base64String => 'data:image/png;base64,' + base64String);
@@ -26,8 +26,9 @@ const PolyesterScreen=()=> {
     }, []);
 
     const handleImage = (id) => {
-        axios.get(`http://192.168.76.125:8080/images/${id}`)
-        // axios.get(`http://192.168.1.59:8080/images/${id}`) //slt
+        //according to the rendered images/items id, can transfer the database table info
+        // axios.get(`http://192.168.239.125:8080/images/${id}`)
+        axios.get(`http://192.168.1.59:8080/images/${id}`) //slt
         .then((output) => {
                  if (output.data) {
                 let itemid=output.data.itemid;
@@ -61,6 +62,7 @@ const PolyesterScreen=()=> {
                         //inside the map, it defines the (image, index) as in a for loop
                         : images.map((image, i) => ( //map- creates a list 
                             //the array starts from 0, and my id start from 1
+                            //so if the id=1 in react clicks and the specif material id=1, then should be able to retrive the data from the responsive tables as in axios URL images/${id}
                             <TouchableOpacity key={i} onPress={() => handleImage(i + 1)}>
                                 <Image source={{ uri: image }} style={stylesmaterialwise.imglist} />
                             </TouchableOpacity>

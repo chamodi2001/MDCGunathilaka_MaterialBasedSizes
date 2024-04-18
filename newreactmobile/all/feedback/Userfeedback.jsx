@@ -26,8 +26,8 @@ const Userfeedback=()=> {
 
         const handleSubmit = () => {
             const feedbacks = { selectedCW:usersize, material};
-            axios.post('http://192.168.76.125:8080/userfeedback', feedbacks) //redmi wifi
-            // axios.post('http://192.168.1.59:8080/userfeedback', feedbacks) //slt wifi
+            // axios.post('http://192.168.239.125:8080/userfeedback', feedbacks) //redmi wifi
+            axios.post('http://192.168.1.59:8080/userfeedback', feedbacks) //slt wifi
 
             .then(output => {
                 console.log('Feedback submitted:',output.data);
@@ -62,16 +62,16 @@ const Userfeedback=()=> {
                     <Text style={stylesfeedback.title}>Enter Chest Width</Text>
                     <RadioButton.Group style={stylesfeedback.radio} onValueChange={(value) => handleRadiobtn(value)}
                     value={usersize}>
-                        <RadioButton.Item label="Width 30-31.5 inches" value="Size6"/>
-                        {/* if the user's chest width size is 30-31.5, so the brand A's size chart measurement for that chest width is- size 6 */}
-                        <RadioButton.Item label="Width 32-33.5 inches" value="Size8"/>
-                        <RadioButton.Item label="Width 34-35.5 inches" value="Size10"/>
-                        <RadioButton.Item label="Width 36-37.5 inches" value="Size12"/>
-                        <RadioButton.Item label="Width 38-39.5 inches" value="Size14"/>
-                        <RadioButton.Item label="Width 40-42.5 inches" value="Size16"/>
+                        <RadioButton.Item label="Width 30-31.5 inches" value="30-31.5"/> 
+                        {/* if the user's chest width size is 32, then accoprding to the brand A's size chart measurement the chest size rane is 32-33.5 */}
+                        <RadioButton.Item label="Width 32-33.5 inches" value="32-33.5"/> 
+                        <RadioButton.Item label="Width 34-35.5 inches" value="34-35.5"/>
+                        <RadioButton.Item label="Width 36-37.5 inches" value="36-37.5"/> 
+                        <RadioButton.Item label="Width 38-39.5 inches" value="38-39.5"/> 
+                        <RadioButton.Item label="Width 40-42.5 inches" value="40-42.5"/> 
                     </RadioButton.Group>
 
-                    {/*  */}
+                    {/* cotton is less strechable than polyester */}
                     <TextInput style={styles.input} onChangeText={text => setMaterial(text)}
                     defaultValue={material} placeholder="Clothing Material"/>
 

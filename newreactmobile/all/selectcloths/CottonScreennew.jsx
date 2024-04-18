@@ -15,8 +15,8 @@ const CottonScreennew=()=> {
     const [images, setImages] = useState(null);
 
     useEffect(() => { //will render the page firs, then loads whats inside
-        axios.get('http://192.168.76.125:8080/imagesCotton/listCotton')
-        // axios.get('http://192.168.1.59:8080/imagesCotton/listCotton') //slt
+        // axios.get('http://192.168.239.125:8080/imagesCotton/listCotton')
+        axios.get('http://192.168.1.59:8080/imagesCotton/listCotton') //slt
             .then((output) => {
                 if (output.data) { //checking whether response/output data is null or 0
                     let images = output.data.map(base64String => 'data:image/png;base64,' + base64String);
@@ -26,8 +26,8 @@ const CottonScreennew=()=> {
     }, []);
 
     const handleImage = (id) => {
-        axios.get(`http://192.168.76.125:8080/imagesCotton/${id}`)
-        // axios.get(`http://192.168.1.59:8080/imagesCotton/${id}`) //slt
+        // axios.get(`http://192.168.239.125:8080/imagesCotton/${id}`)
+        axios.get(`http://192.168.1.59:8080/imagesCotton/${id}`) //slt
         .then((output) => {
                  if (output.data) { 
                 let itemid=output.data.itemid;
