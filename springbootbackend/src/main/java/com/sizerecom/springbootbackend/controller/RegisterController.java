@@ -40,6 +40,11 @@ public class RegisterController {
     List<Register> getAllusers() {
         return registerRepoObj.findAll();
     }
+
+
+//    public Register getcw(@PathVariable double chestwidth) {
+//        return registerRepoObj.findByChestwidth(chestwidth);
+//    }
     //////////////////////////////////////
 
 

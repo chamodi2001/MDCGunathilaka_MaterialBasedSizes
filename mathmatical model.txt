@@ -1,0 +1,20 @@
+ public String getFbPolyester(int Uksize) {
+        //after getting/ rerieving all the data as a list from the table
+        List<fbPolyester> fbPolyestersObj = fbPolyesterRepoObj.findByuksize(Uksize);
+
+        if (!fbPolyestersObj.isEmpty()) {
+            min = fbPolyestersObj.get(0).getUsercw(); //find the minimum value for that uksize
+            max = fbPolyestersObj.get(0).getUsercw();  //find the maximum value for that uksize
+            for (fbPolyester Usercwobj : fbPolyestersObj) {
+                double cw = Usercwobj.getUsercw();
+                if (cw < min) {
+                    min = cw; //getting the min value
+                }
+                if (cw > max) {
+                    max = cw;
+                }
+//            }return min +max;
+            }return "min is "+min+ ",max is " +max;
+        }else {
+            return "No data available " ;
+        }

@@ -12,4 +12,5 @@ public interface RegisterRepo extends JpaRepository <Register, Long>{//these int
     //jpa  provides crud operation methods such as, findbyID(),find all(),existsById(),save(),deleteById() and other.
 
     Register findByUsername(String username);
+    Register findByChestwidth(double cwRegister);
 }
