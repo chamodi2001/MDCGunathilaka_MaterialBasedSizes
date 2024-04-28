@@ -42,6 +42,8 @@ const CottonScreennew=()=> {
         .catch((error) => {
             console.error(`Error fetching the image with id ${id}: `, error);
         });
+
+      
     };
 
     return (

@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface fbPolyesterRepo extends JpaRepository<fbPolyester,Long> {
 
-//    fbPolyester findByUsercw(double cw);
+    fbPolyester findByUsercw(double cw);
 
     fbPolyester findByid(long id);
 

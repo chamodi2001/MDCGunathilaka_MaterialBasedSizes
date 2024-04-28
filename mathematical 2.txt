@@ -1,0 +1,45 @@
+@GetMapping("/feedbackPolyester/getuksize")
+    public double getFbPolyester(int Uksize) {
+        //after getting/ rerieving all the data as a list from the table
+        List<fbPolyester> fbPolyestersObj = fbPolyesterRepoObj.findByuksize(Uksize);
+
+        if (!fbPolyestersObj.isEmpty()) {
+            min = fbPolyestersObj.get(0).getUsercw(); //find the minimum value for that uksize
+            max = fbPolyestersObj.get(0).getUsercw();  //find the maximum value for that uksize
+            for (fbPolyester Usercwobj : fbPolyestersObj) {
+                double cw = Usercwobj.getUsercw();
+                if (cw < min) {
+                    min = cw; //getting the min value
+                }
+                if (cw > max) {
+                    max = cw;
+                }
+
+            }//calling the Register class usewr entered 'chestwidth'.
+            ////
+    Register registercwObj=new Register();
+            enteredCw=registercwObj.getChestwidth();
+            if(enteredCw>=min && enteredCw<=max){
+                return Uksize;
+            }
+            else {
+                return 0 ; //error
+            }
+            //return "min is "+min+ ",max is " +max;
+        }
+        ////////
+        //putting the calculated chest with range and its uk size in another table.
+        return 0;
+    }
+
+
+/////////////////////////////
+//calling the Register class usewr entered 'chestwidth'.
+Register registercwObj=new Register();
+            enteredCw=registercwObj.getChestwidth();
+            if(enteredCw>=min && enteredCw<=max){
+                return "min is "+min+ ",max is " +max;
+            }
+            else {
+                return "No data available for " + marks + " marks.";
+            }

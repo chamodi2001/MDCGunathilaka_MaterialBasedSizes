@@ -34,7 +34,7 @@ const PolyesterScreen=()=> {
                 let itemid=output.data.itemid;
                 let price = output.data.price;
                 let stock = output.data.stock;
-
+            
                 //displays the item id that clicked throgh the console log
                 console.log("ITEM INDEX CLICKED: ",id);
                 navigateTo.navigate('SizeRec', { itemid:itemid, price: price, stock: stock }); 
@@ -43,6 +43,8 @@ const PolyesterScreen=()=> {
         .catch((error) => {
             console.error(`Error fetching the image with id ${id}: `, error);
         });
+
+        
     };
 
     return (

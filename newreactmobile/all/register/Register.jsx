@@ -23,11 +23,12 @@ const Register=()=> {
         const Register = { username, password, age, chestwidth };
         
         try {
-        const output = await axios.post('http://192.168.239.125:8080/user', Register);
-        // const output = await axios.post('http://192.168.1.59:8080/user', Register); //slt wifi
+        // const output = await axios.post('http://192.168.239.125:8080/user', Register);
+        const output = await axios.post('http://192.168.1.59:8080/user', Register); //slt wifi
         window.alert('Successfully added data to the database');
         console.log(output.data);
         } catch (error) {
+        window.alert('error');
         console.error('Error in adding a new user:', error);
         }
         ////////////////////

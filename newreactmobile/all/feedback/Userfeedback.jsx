@@ -81,7 +81,7 @@ const Userfeedback=()=> {
                     </TouchableOpacity>
                     
                     {/* skip and just continue using the application */}
-                    <TouchableOpacity onPress={() => navigateTo.navigate('Material')}>
+                    <TouchableOpacity onPress={() => navigateTo.navigate('HomeStack')}>
                         <Text style={stylesfeedback.textsign}>Skip</Text>
                     </TouchableOpacity>
                     
