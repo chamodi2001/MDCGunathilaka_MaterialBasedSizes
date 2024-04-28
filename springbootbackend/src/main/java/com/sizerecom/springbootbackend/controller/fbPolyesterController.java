@@ -65,15 +65,22 @@ public class fbPolyesterController {
 // and the getSwitch method will automatically return the fitted UK size
 
 @GetMapping("/pol/chestwidth/{username}")
-public double getChestWidth(@PathVariable Login loginuser) {
-    Register existingUser = RegisterRepoObj.findByUsername(loginuser.getLoginusername());
-
-    if (existingUser != null) {
-        return existingUser.getChestwidth();
+public ResponseEntity<Double> getChestWidth(@PathVariable String username) {
+    Register RegisterObj = RegisterRepoObj.findByUsername(username);
+    if (RegisterObj != null) {
+        return new ResponseEntity<>(RegisterObj.getChestwidth(), HttpStatus.OK);
     } else {
-        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found");
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 }
+//public double getChestWidth(@PathVariable String username) {
+//    Register RegisterObj = RegisterRepoObj.findByUsername(username);
+//    if (RegisterObj != null) {
+//        return RegisterObj.getChestwidth();
+//    } else {
+//        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found");
+//    }
+//}
 //@GetMapping("/pol/chestwidth/{username}")
 //public Map<String, Object> getChestWidth(@PathVariable String username) {
 //    Register RegisterObj = RegisterRepoObj.findByUsername(username);

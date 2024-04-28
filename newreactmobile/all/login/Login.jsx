@@ -4,6 +4,7 @@ import { styleslogin } from './Loginstyles';
 import { styles } from '../register/Registerstyles';
 import { Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import axios from 'axios';
 
@@ -25,22 +26,39 @@ const Login=()=> {
             loginpassword:loginpassword
         };
        
-        // await axios.post('http://192.168.239.125:8080/userlogin', Logindetails)
-        await axios.post('http://192.168.1.59:8080/userlogin', Logindetails) //slt wifi
-        .then(output => {
-            console.log(output.data);
-            Alert.alert('Login successful');
-            navigateTo.navigate('Userfeedback'); //obj.func
-        })
+        // // await axios.post('http://192.168.239.125:8080/userlogin', Logindetails)
+        // await axios.post('http://192.168.1.59:8080/userlogin', Logindetails) //slt wifi
+        // .then(output => {
+        //     console.log(output.data);
+        //     Alert.alert('Login successful');
+        //     navigateTo.navigate('Userfeedback'); //obj.func
+        // })
         
-        .catch(error => {
-            console.log(error);
-            // Alert.alert('Please enter a valid Username and Password');
-            Alert.alert('Username or Password is Incorrect');
+        // .catch(error => {
+        //     console.log(error);
+        //     // Alert.alert('Please enter a valid Username and Password');
+        //     Alert.alert('Username or Password is Incorrect');
             
-        });
-        
-        //
+        // });
+
+        /////////////////////////////////////////////////
+
+        // await axios.post('http://192.168.239.125:8080/userlogin', Logindetails)
+        axios.post('http://192.168.1.59:8080/userlogin', Logindetails)            
+        .then(response => {
+                if (response.status === 200) {
+                  AsyncStorage.setItem('loginusername', loginusername);
+                  Alert.alert('Login successful');
+                  navigateTo.navigate('Userfeedback');
+                }
+              })
+              .catch(error => {
+                console.error('There was an error!', error);
+                Alert.alert('Username or Password is Incorrect');
+              });
+        /////////////////////////
+
+    
         if (!loginusername) {
             //checks username is empty
             Alert.alert('Error', 'Username is required');

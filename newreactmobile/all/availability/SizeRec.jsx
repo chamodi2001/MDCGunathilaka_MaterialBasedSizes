@@ -8,13 +8,16 @@ import { stylesSizeRec } from './SizeRecstyles';
 import { styleslogin } from '../login/Loginstyles';
 import { useRoute } from '@react-navigation/native';
 import axios from 'axios';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 const SizeRec=()=>{ //.using the rote prpoty u can access the data,
     // passed from the 'polyesterScrenn' pagee
     const navigateTo = useNavigation();
 
-    // const [cw, setcw] = useState(null); // for the cw with username
     const [chestWidth, setChestWidth] = useState(null);
+
+
     // const [Uksize, setUksize] = useState(null); // for the bestfitting uk size to dsiplay
 
     const route = useRoute(); //getting/ recieving the data from the all material pages 
@@ -28,29 +31,36 @@ const SizeRec=()=>{ //.using the rote prpoty u can access the data,
     };
 
 
-    useEffect(() => {
-        axios.get('http://192.168.1.59:8080/pol/chestwidth/username')
-        .then(response => {
-            setChestWidth(response.data);
-        })
-        .catch(error => {
-            console.error('There was an error!', error);
-        });
-    }, []);
-
-
     // useEffect(() => {
-    //     axios.get('http://192.168.1.59:8080/pol/switch/{username}/{cwRegister}')
-    //     .then(output => {
-    //         setUksize(output.data);
-    //         console.log("UK size is: ", output.data);
+    //     axios.get('http://192.168.1.59:8080/pol/chestwidth/{username}')
+    //     .then(response => {
+    //         setChestWidth(response.data);
     //     })
     //     .catch(error => {
-    //         console.error(error.response);
+    //         console.error('There was an error!', error);
     //     });
     // }, []);
 
-    
+
+        //ocalStorage.getItem('loginusername') is used to get the username from local storage. 
+        //If a username is found, 
+        //a request is made to the backend to get the user's chest width.
+        
+      useEffect(() => {
+        // Get the username from AsyncStorage
+        AsyncStorage.getItem('loginusername')
+          .then(username => {
+            if (username) {
+              axios.get(`http://192.168.1.59:8080/pol/chestwidth/${username}`)
+                .then(response => {
+                  setChestWidth(response.data);
+                })
+                .catch(error => {
+                  console.error('There was an error!', error);
+                });
+            }
+          });
+      }, []);
 
   
 
@@ -59,16 +69,13 @@ const SizeRec=()=>{ //.using the rote prpoty u can access the data,
         <ImageBackground source={require('../../public/images/background/three.jpg')} style={{width: '100%', height: '100%'}}>
         <View style={styles.container}>
             <Text style={styles.title}>Recomended Size</Text>
-            
+            {chestWidth && <Text style={styles.chestWidth}>Chest Width: {chestWidth}</Text>}
 
             <Text style={stylesSizeRec.title}>Itemid: {itemid}</Text>
 
             <Text style={stylesSizeRec.title}>Price: {price} LKR</Text>
 
             <Text style={stylesSizeRec.title}>Stock: {stock}</Text>
-
-            
-            <Text style={stylesSizeRec.title}>{chestWidth ? `The chest width is ${chestWidth}` : 'Loading...'} </Text>
 
 
             {/* {Uksize ? <Text>Recommended Euro size: {Uksize}</Text> : <Text>Loading...</Text>} */}
