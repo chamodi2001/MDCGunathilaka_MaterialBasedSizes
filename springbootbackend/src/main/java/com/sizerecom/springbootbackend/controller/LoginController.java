@@ -21,14 +21,15 @@ public class LoginController {
 
     private RegisterRepo registerRepoObj;
 @PostMapping("/userlogin")
-public ResponseEntity<String> loginmethod(@RequestBody Login oldUser) {
+//loginuser contains login username and password
+public ResponseEntity<String> loginmethod(@RequestBody Login loginuser) {
     //This line retrieves a Register object from the registerRepoObj repository using the username from the loginuser object.
     // The Register object represents a user that has already registered.
     //call the Register
-    Register existingUser = registerRepoObj.findByUsername(oldUser.getLoginusername());
+    Register existingUser = registerRepoObj.findByUsername(loginuser.getLoginusername());
 
-    //if the it is not a existing user, so the password and th username of old user doesnot match,
-    if (existingUser != null && existingUser.getPassword().equals(oldUser.getLoginpassword())) {
+    //if the it is not an existing user, so the password and th username of old user doesnot match,
+    if (existingUser != null && existingUser.getPassword().equals(loginuser.getLoginpassword())) {
         //if true- it returns a http rsponse saying login successfull
         return new ResponseEntity<>("Login Successful", HttpStatus.OK);
     } else {

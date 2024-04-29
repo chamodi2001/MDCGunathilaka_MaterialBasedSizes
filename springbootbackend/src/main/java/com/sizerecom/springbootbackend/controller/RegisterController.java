@@ -30,8 +30,8 @@ public class RegisterController {
    //post mapping- annotation for mapping HTTP POST req- for postman api
    @PostMapping("/user")
    //create a new user(REgister)
-   Register newUser(@RequestBody Register newUser) {
-       return registerRepoObj.save(newUser); //obj.method //the save()- method is from the RegisterRepo interface that contains Jpa framework/interface
+   Register newUser1(@RequestBody Register newUser1) {
+       return registerRepoObj.save(newUser1); //obj.method //the save()- method is from the RegisterRepo interface that contains Jpa framework/interface
    }
 
    //get mapping annotation
@@ -40,6 +40,11 @@ public class RegisterController {
     List<Register> getAllusers() {
         return registerRepoObj.findAll();
     }
+
+
+//    public Register getcw(@PathVariable double chestwidth) {
+//        return registerRepoObj.findByChestwidth(chestwidth);
+//    }
     //////////////////////////////////////
 
 

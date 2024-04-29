@@ -13,7 +13,7 @@ public class Register {
     private String username;
     private String password;
     private int age;
-    private int chestwidth;
+    private double chestwidth;
 
     public long getId() {
         return id;
@@ -49,11 +49,11 @@ public class Register {
     }
     //
 
-    public int getChestidth(){
+    public double getChestwidth(){
         return chestwidth;
     }
 
-    public void setChestwidth(int chestwidth){
+    public void setChestwidth(double chestwidth){
         this.chestwidth= chestwidth;
     }
 

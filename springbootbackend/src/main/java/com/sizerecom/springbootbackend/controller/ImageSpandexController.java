@@ -49,7 +49,7 @@ public class ImageSpandexController {
         }).collect(Collectors.toList());
     }
 
-    @GetMapping("imagesSpandex/{id}")
+    @GetMapping("imagesSpandex/{id}") //getting the id of clothing materials.
     public ImageSpandex getImageSpandex(@PathVariable Long id) {
         return ImageSpandexRepoObj.findById(id)
                 .orElseThrow(() -> new RuntimeException("Image not found with id " + id));

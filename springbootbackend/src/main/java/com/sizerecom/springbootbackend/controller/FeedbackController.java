@@ -19,7 +19,7 @@ public class FeedbackController {
     //but Request body- mostly uses in post annotation
 
     Feedback userfeedback(@RequestBody Feedback userfeedback) {
-        return feedbackRepoObj.save(userfeedback); //obj.method //the save()- method is from the RegisterRepo interface that contains Jpa framework/interface
+        return feedbackRepoObj.save(userfeedback); //obj.method //the save()- method is from the FeedbackRepo interface that contains Jpa framework/interface
     }
 
 }
