@@ -30,17 +30,18 @@ const SizeRec=()=>{ //.using the rote prpoty u can access the data,
     };
 
         useEffect(() => {
-            // Get the username from AsyncStorage
+            // from asyncStorage get the username of the ogged in user
             AsyncStorage.getItem('loginusername')
-            .then(username => {
+            //then using the 'username' argument, check if it exists. 
+            .then(username => { 
                 if (username) {
-                axios.get(`http://192.168.1.59:8080/pol/chestwidth/${username}`)
-                    .then(response => {
-                    setChestWidth(response.data);
-                    // Get the recommended UK size
-                    axios.get(`http://192.168.1.59:8080/pol/recommend/${response.data}`)
-                        .then(response => {
-                        setUkSize(response.data);
+                axios.get(`http://192.168.1.59:8080/polyester/chestwidth/${username}`)
+                    .then(output => {
+                    setChestWidth(output.data); // update the state value of user's chest wodth
+                    //Recomemding a uk size
+                    axios.get(`http://192.168.1.59:8080/polyester/recommend/${output.data}`)
+                        .then(output => {
+                        setUkSize(output.data);
                         })
                         .catch(error => {
                         console.error('No enough data to recomend a size', error);
@@ -60,9 +61,11 @@ const SizeRec=()=>{ //.using the rote prpoty u can access the data,
         <View style={styles.container}>
             <Text style={styles.title}>Recomended Size</Text>
 
+            {/* inside a new container view displaying the current logged in user's chest with */}
             <View style={stylesmaterial.subcontainer}>
                 {chestWidth && <Text style={styles.chestWidth}> (Chest Width: {chestWidth})</Text>}
 
+                {/* displaying the recommended uk size for thatt user */}
                 {ukSize && <Text style={stylesSizeRec.rec}>UK Size: {ukSize}</Text>}
             </View>
             <Text style={stylesSizeRec.title}>Itemid: {itemid}</Text>
@@ -70,11 +73,6 @@ const SizeRec=()=>{ //.using the rote prpoty u can access the data,
             <Text style={stylesSizeRec.title}>Price: {price} LKR</Text>
 
             <Text style={stylesSizeRec.title}>Stock: {stock}</Text>
-
-
-            {/* {Uksize ? <Text>Recommended Euro size: {Uksize}</Text> : <Text>Loading...</Text>} */}
-
-            {/* {Uksize ? <Text>{Uksize}</Text> : <Text>Loading...</Text>} */}
 
             {/* user can buy the item, then have to pay throgh paypal */}
             <TouchableOpacity style={styles.button} onPress={handleSubmit}>

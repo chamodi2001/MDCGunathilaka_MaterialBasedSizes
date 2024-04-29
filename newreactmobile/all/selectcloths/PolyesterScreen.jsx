@@ -37,6 +37,7 @@ const PolyesterScreen=()=> {
             
                 //displays the item id that clicked throgh the console log
                 console.log("ITEM INDEX CLICKED: ",id);
+                //navigate to the size rec page along with the itemid, price and stock.
                 navigateTo.navigate('SizeRec', { itemid:itemid, price: price, stock: stock }); 
             }
         })
