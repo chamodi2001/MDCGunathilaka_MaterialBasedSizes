@@ -6,6 +6,7 @@ import { Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { stylesSizeRec } from './SizeRecstyles';
 import { styleslogin } from '../login/Loginstyles';
+import { stylesmaterial } from '../selectcloths/Materialstyles';
 import { useRoute } from '@react-navigation/native';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -16,9 +17,7 @@ const SizeRec=()=>{ //.using the rote prpoty u can access the data,
     const navigateTo = useNavigation();
 
     const [chestWidth, setChestWidth] = useState(null);
-
-
-    // const [Uksize, setUksize] = useState(null); // for the bestfitting uk size to dsiplay
+    const [ukSize, setUkSize] = useState(null);
 
     const route = useRoute(); //getting/ recieving the data from the all material pages 
     const {  itemid, price, stock} = route.params; //parameters 
@@ -30,38 +29,29 @@ const SizeRec=()=>{ //.using the rote prpoty u can access the data,
         navigateTo.navigate('Paypal');    
     };
 
-
-    // useEffect(() => {
-    //     axios.get('http://192.168.1.59:8080/pol/chestwidth/{username}')
-    //     .then(response => {
-    //         setChestWidth(response.data);
-    //     })
-    //     .catch(error => {
-    //         console.error('There was an error!', error);
-    //     });
-    // }, []);
-
-
-        //ocalStorage.getItem('loginusername') is used to get the username from local storage. 
-        //If a username is found, 
-        //a request is made to the backend to get the user's chest width.
-        
-      useEffect(() => {
-        // Get the username from AsyncStorage
-        AsyncStorage.getItem('loginusername')
-          .then(username => {
-            if (username) {
-              axios.get(`http://192.168.1.59:8080/pol/chestwidth/${username}`)
-                .then(response => {
-                  setChestWidth(response.data);
-                })
-                .catch(error => {
-                  console.error('There was an error!', error);
-                });
-            }
-          });
-      }, []);
-
+        useEffect(() => {
+            // Get the username from AsyncStorage
+            AsyncStorage.getItem('loginusername')
+            .then(username => {
+                if (username) {
+                axios.get(`http://192.168.1.59:8080/pol/chestwidth/${username}`)
+                    .then(response => {
+                    setChestWidth(response.data);
+                    // Get the recommended UK size
+                    axios.get(`http://192.168.1.59:8080/pol/recommend/${response.data}`)
+                        .then(response => {
+                        setUkSize(response.data);
+                        })
+                        .catch(error => {
+                        console.error('No enough data to recomend a size', error);
+                        });
+                    })
+                    .catch(error => {
+                    console.error('There was an error!', error);
+                    });
+                }
+            });
+        }, []);
   
 
     return(
@@ -69,8 +59,12 @@ const SizeRec=()=>{ //.using the rote prpoty u can access the data,
         <ImageBackground source={require('../../public/images/background/three.jpg')} style={{width: '100%', height: '100%'}}>
         <View style={styles.container}>
             <Text style={styles.title}>Recomended Size</Text>
-            {chestWidth && <Text style={styles.chestWidth}>Chest Width: {chestWidth}</Text>}
 
+            <View style={stylesmaterial.subcontainer}>
+                {chestWidth && <Text style={styles.chestWidth}> (Chest Width: {chestWidth})</Text>}
+
+                {ukSize && <Text style={stylesSizeRec.rec}>UK Size: {ukSize}</Text>}
+            </View>
             <Text style={stylesSizeRec.title}>Itemid: {itemid}</Text>
 
             <Text style={stylesSizeRec.title}>Price: {price} LKR</Text>
