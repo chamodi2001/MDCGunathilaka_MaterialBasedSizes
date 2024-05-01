@@ -6,8 +6,8 @@ export const stylesmaterial = StyleSheet.create({
         padding:20,
         borderWidth:1,
         borderRadius: 30,
-        // backgroundColor: '#FDFAFA', e4c1f9,fff0f3.e0b1cb
-        backgroundColor: '#e4c1f9',
+        // backgroundColor: e4c1f9,fff0f3.e0b1cb
+        backgroundColor: 'white',
         borderColor: 'black',
         alignItems: 'center',
 

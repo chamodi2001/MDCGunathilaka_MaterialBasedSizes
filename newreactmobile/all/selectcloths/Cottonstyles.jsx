@@ -15,6 +15,7 @@ export const stylescotton = StyleSheet.create({
   subcontainerMaterial:{
     margin:5,
     marginHorizontal:15,
+    marginBottom: 200,
     padding:5,
     borderWidth:1,
     borderRadius: 10,

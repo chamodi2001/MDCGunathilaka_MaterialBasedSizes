@@ -77,6 +77,7 @@ const Register=()=> {
                     
                 <TextInput style={styles.input} onChangeText={text => setage(text)}
                     defaultValue={age} placeholder="Age"/>
+                    
                 <TextInput style={styles.input} onChangeText={text => setcw(text)}
                 defaultValue={chestwidth} placeholder="Chest Width"/>
 

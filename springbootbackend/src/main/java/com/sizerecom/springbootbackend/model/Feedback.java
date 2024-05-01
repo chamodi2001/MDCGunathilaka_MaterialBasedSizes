@@ -5,12 +5,17 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
 @Entity
+
+//getting the user feedbacks every fedback.
 public class Feedback {
     @Id
     @GeneratedValue
     private long id;
-    private String selectedCW; //the chest width
+    private int ukSizefb; //the uk size
+    private double chestWidthfb; //the chest width
+
     private String material; //the user select material
+
 
     public long getId() {
         return id;
@@ -20,12 +25,20 @@ public class Feedback {
         this.id = id;
     }
 
-    public String getSelectedCW() {
-        return selectedCW;
+    public int getUkSizefb() {
+        return ukSizefb;
     }
 
-    public void setSelectedCW(String selectedCW) {
-        this.selectedCW = selectedCW;
+    public void setUkSizefb(int ukSizefb) {
+        this.ukSizefb = ukSizefb;
+    }
+
+    public double getChestWidthfb() {
+        return chestWidthfb;
+    }
+
+    public void setChestWidthfb(double chestWidthfb) {
+        this.chestWidthfb = chestWidthfb;
     }
 
     public String getMaterial() {
@@ -35,5 +48,4 @@ public class Feedback {
     public void setMaterial(String material) {
         this.material = material;
     }
-
 }

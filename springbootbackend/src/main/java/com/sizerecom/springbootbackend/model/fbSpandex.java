@@ -5,12 +5,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-//user feedbacks are send to this page. the polyester material feedbacks.
 @Entity
-public class fbPolyester {
+
+public class fbSpandex {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
 
     private long id;
     private double usercw; //its better to give the field names starting from simple letters, or else it would get confused in the get methods.
@@ -23,15 +22,6 @@ public class fbPolyester {
     public void setId(long id) {
         this.id = id;
     }
-
-    ///////
-    // creating a constructor to return the able columns
-//    public fbPolyester(double Usercw, int UserUksize) {
-//        this.Usercw = Usercw;
-//        this.UserUksize = UserUksize;
-//    }
-    ////////
-
 
     public double getUsercw() {
         return usercw;
