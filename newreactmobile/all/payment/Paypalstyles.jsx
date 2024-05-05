@@ -24,12 +24,16 @@ export const stylespaypal = StyleSheet.create({
     color:'blue',
   },
 
+  backgroundColor: '#9d4edd',
+    padding: 15,
+    paddingHorizontal: 60,
+    marginTop: 20,
+    borderRadius: 10,
+    alignItems: 'center',
   buy:{
-    color:'blue',
-    padding: 30,
-    textAlign: 'center',
-    color: 'blue',
-    // textDecorationLine: 'underline',
-    fontSize:17,
+    color: 'white',
+    fontWeight:'bold',
+    fontSize: 18,
+  
   }
 });

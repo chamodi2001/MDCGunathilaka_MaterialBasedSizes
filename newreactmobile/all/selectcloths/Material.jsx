@@ -34,6 +34,7 @@ const Material=()=> {
                 selectedValue={selectedcloth} style={stylesmaterial.dropdown} onValueChange={(clothValue,clothIndex)=> {setselectedcloth(clothValue);}}
                     //navigate to the screen which has the same screen name(value) matched
                 >
+                    <Picker.Item label="Select Material" value="select"/>
                     <Picker.Item label="Cotton" value="CottonScreenv" />
                     <Picker.Item label="Polyester" value="PolyesterScreenv"/>
                     <Picker.Item label="Spandexblend" value="SpandexblendScreenv"/> 

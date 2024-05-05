@@ -25,23 +25,22 @@ const Userfeedback=()=> {
         
             const feedbacks = { material, cw, uksize};
 
+            //checks if the attributes is empty
+            if (!material || !cw || !uksize) {
+                Alert.alert('Error', 'All fields are required');
+                // return; //stops the function
+            }
+            else{
             axios.post('http://192.168.1.59:8080/userfeedback', feedbacks)
                 .then(output => {
                     console.log('Feedback submitted:', output.data);
-                    Alert.alert('Successful', 'Thank you for your feedback');
-                    navigateTo.navigate('HomeStack'); //would navigate to the stack called homeStack.
+                    Alert.alert('Successful', 'Feedback Recorded');
+                    // navigateTo.navigate('HomeStack'); //would navigate to the stack called homeStack.
                 })
                 .catch(error => {
                     console.log('Error submitting feedback:', error);
-                });
-
-
-                //checks if the attributes is empty
-            if (!material || !cw || !uksize) {
-                Alert.alert('Error', 'All fields are required');
-                return; //stops the function
-            }
-            
+                }); 
+            }     
         };              
     
 
@@ -68,19 +67,14 @@ const Userfeedback=()=> {
                 
                     <TextInput style={styles.input} onChangeText={text => setUksize(text)}
                     defaultValue={uksize} placeholder="Uk Size"/>
-                     {/* <TextInput style={styles.input} onChangeText={text => setCw(Number(text))}
-                    defaultValue={cw.toString()} placeholder="Chest Width"/>
-
-                    <TextInput style={styles.input} onChangeText={text => setUksize(Number(text))}
-                    defaultValue={uksize.toString()} placeholder="Uk Size"/> */}
 
                     {/* visit the next page -the size recommendation system*/}
                     <TouchableOpacity style={styles.button} onPress={handleSubmit}>
-                        <Text style={stylesfeedback.buttonText}>Next</Text>
+                        <Text style={stylesfeedback.buttonText}>Done</Text>
                     </TouchableOpacity>
                     
                     {/* skip and just continue using the application */}
-                    <TouchableOpacity onPress={() => navigateTo.navigate('HomeStack')}>
+                    <TouchableOpacity onPress={() => navigateTo.navigate('Bottomstack')}>
                         <Text style={stylesfeedback.textsign}>Skip</Text>
                     </TouchableOpacity>
                     

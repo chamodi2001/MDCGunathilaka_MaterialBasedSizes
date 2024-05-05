@@ -42,15 +42,7 @@ const homenav= createBottomTabNavigator();
 const HomeStack=()=>{
   return(
     <homenav.Navigator screenOptions={{headerShown: false}}>
-      {/* <tabnav.Screen name="Size" component={EnterSize} 
-      options={{
-        tabBarIcon: ({ focused }) => (
-          <Image
-            source={require('./public/images/size2.png')}
-            style={{ width: 25, height: 25 }}
-          />
-        ),}}
-      />  */}
+    
       <homenav.Screen name="Material" component={Material} 
       options={{
         tabBarIcon: ({ focused }) => (
@@ -107,11 +99,9 @@ const App = () => {
     <NavigationContainer>
        <Stackpath.Navigator>
 
-          
           <Stackpath.Screen name="Loading" component={Loading} options={{ headerShown: false }}/>
-          <Stackpath.Screen name="Register" component={Register} options={{ headerShown: false }}/>
           <Stackpath.Screen name="Login" component={Login} options={{ headerShown: false }}/>
-          <Stackpath.Screen name="Userfeedback" component={Userfeedback} options={{ headerShown: false }}/>
+          <Stackpath.Screen name="Register" component={Register} options={{ headerShown: false }}/>
           {/* <Stackpath.Screen name="EnterSize" component={EnterSize} options={{ headerShown: false }}/> */}
 
           {/* the home stack-'Mertrial' page */}
@@ -123,6 +113,8 @@ const App = () => {
           <Stackpath.Screen name="SizeRec" component={SizeRec} options={{ headerShown: false }}/>
 
           <Stackpath.Screen name="Paypal" component={Paypal} options={{ headerShown: false }}/>
+          <Stackpath.Screen name="Userfeedback" component={Userfeedback} options={{ headerShown: false }}/>
+
          
       </Stackpath.Navigator>
     </NavigationContainer>
