@@ -27,7 +27,8 @@ Clone the Repository: Clone the repository to your local machine.
   2. username: Min
      password:Asdd
 
-* Email:    sb-tpyrq24868012@business.example.com
+* For PayPal login credentials,
+  Email:    sb-tpyrq24868012@business.example.com
   Password: HM4(g+g8
   
 
