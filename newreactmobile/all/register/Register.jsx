@@ -20,47 +20,48 @@ const Register=()=> {
     // const handleSubmit =() => {
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const Register = { username, password, age, chestwidth };
-        
-        try {
-        // const output = await axios.post('http://192.168.239.125:8080/user', Register);
-        const output = await axios.post('http://192.168.1.59:8080/user', Register); //slt wifi
-        window.alert('Successfully added data to the database');
-        console.log(output.data);
-        } catch (error) {
-        window.alert('error');
-        console.error('Error in adding a new user:', error);
-        }
-        ////////////////////
 
         /////Validations
         if (!username) {
-          //checks username is empty
-          Alert.alert('Error', 'Username is required');
-          return;
-        }
-        if (!password) {
-            Alert.alert('Error', 'Password is required');
+            //checks username is empty
+            Alert.alert('Error', 'Username is required');
             return;
-            }
-            else if(password.length < 4){
-                Alert.alert('Error', 'Enter more than 4 characters');
-                return;
-            }
-        //age must be between 0 to 100
-        if(isNaN(age) || age<0 || age>100){
-            Alert.alert('Error', 'Enter a valid age');
-            return;
-        }chestwidth
-        if(isNaN(chestwidth)) {
-            Alert.alert('Error', 'Enter a chest width');
-            return;
-        }
-        else{
-            Alert.alert('Successful', 'successfully registered');
-            navigateTo.navigate('Login');
-            return;
-        }     
+          }
+              else if(!password) {
+                  Alert.alert('Error', 'Password is required');
+                  return;
+              }
+              else if(password.length < 4){
+                      Alert.alert('Error', 'Enter more than 4 character password');
+                      return;
+              }
+              //age must be between 0 to 100
+              else if(isNaN(age) || age<0 || age>100){
+                  Alert.alert('Error', 'Enter a valid age');
+                  return;
+              }
+              else if(isNaN(chestwidth)) {
+                  Alert.alert('Error', 'Enter a chest width');
+                  return;
+              }
+
+          else{
+            const Register = { username, password, age, chestwidth };
+
+            // await axios.post('http://192.168.239.125:8080/user', Register);
+            axios.post('http://192.168.1.59:8080/user', Register) //slt wifi    
+            .then(response => {
+                    if (response.status === 200) { //if response is success
+                        window.alert('Successfully added New User');
+                        navigateTo.navigate('Login');
+                        console.log(response.data);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error in adding a new user:', error);
+                    Alert.alert('Error adding new Useer');
+                });
+          }     
     };
 
     return (
@@ -77,6 +78,7 @@ const Register=()=> {
                     
                 <TextInput style={styles.input} onChangeText={text => setage(text)}
                     defaultValue={age} placeholder="Age"/>
+                    
                 <TextInput style={styles.input} onChangeText={text => setcw(text)}
                 defaultValue={chestwidth} placeholder="Chest Width"/>
 

@@ -36,7 +36,7 @@ const CottonScreennew=()=> {
 
                 //displays the item id that clicked throgh the console log
                 console.log("ITEM INDEX CLICKED: ",id);
-                navigateTo.navigate('SizeRec', { itemid:itemid, price: price, stock: stock }); 
+                navigateTo.navigate('SizeRec', { itemid:itemid, price: price, stock: stock, screenName: 'CottonScreennew' }); 
             }
         })
         .catch((error) => {

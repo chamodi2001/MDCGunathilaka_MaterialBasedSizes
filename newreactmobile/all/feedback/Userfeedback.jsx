@@ -15,38 +15,44 @@ import axios from 'axios';
 const Userfeedback=()=> {
     const navigateTo = useNavigation(); 
 
-    const [usersize, setUsersize] = useState('Size6'); //for radio btn 
-    //the pre saved value would be size 6
-    const [material, setMaterial] =useState();
-  
-    const handleRadiobtn = (selectedCW) => { //the func would be updated with new value, which user entered
-        // event.preventDefault();
-        setUsersize(selectedCW); //updating the state
-        };
+    const [material, setMaterial] =useState('');
+    const [cw, setCw] =useState('');
+    const [uksize, setUksize] =useState('');
 
-        const handleSubmit = () => {
-            const feedbacks = { selectedCW:usersize, material};
-            // axios.post('http://192.168.239.125:8080/userfeedback', feedbacks) //redmi wifi
-            axios.post('http://192.168.1.59:8080/userfeedback', feedbacks) //slt wifi
+        const handleSubmit = async (event) => {
+            event.preventDefault();
 
-            .then(output => {
-                console.log('Feedback submitted:',output.data);
-            })
-            
-            .catch(error => {
-                console.log('Error submitting feedback:',error);
-            });
-
-            if (!material) {
-                //checks material attribute is empty
-                Alert.alert('Error', 'Material is required');
-                return;//stops the function
-              }
-                else {
-                    Alert.alert('Successful', 'Thank you for your feedback');
-                    navigateTo.navigate('HomeStack'); //would navigate to the stack called homeStack.
-                    return;
+            //checks if the attributes is empty
+            if (!material || !cw || !uksize) {
+                Alert.alert('Error', 'All fields are required');
+                // return; //stops the function
             }
+            else if(isNaN(cw || uksize)){
+                Alert.alert('Error','Enter a valid Numerical number')
+                return;
+            }
+            else if(!(uksize>=6) || !(uksize<=16)){
+                Alert.alert('Error','Uksize should be from 6,8,10,12,14,16')
+                return;
+            }
+          
+            else{
+                // const feedbacks = { material, cw, uksize};
+                const feedbacks = { 
+                    material, 
+                    chestWidthfb: cw, // changed from cw
+                    ukSizefb: uksize // changed from uksize
+                };
+                axios.post('http://192.168.1.59:8080/saveMaterialData', feedbacks)
+                    .then(output => {
+                        console.log('Feedback submitted:', output.data);
+                        Alert.alert('Successful', 'Feedback Recorded');
+                        // navigateTo.navigate('HomeStack'); //would navigate to the stack called homeStack.
+                    })
+                    .catch(error => {
+                        console.log('Error submitting feedback:', error);
+                    }); 
+            }     
         };              
     
 
@@ -59,29 +65,30 @@ const Userfeedback=()=> {
                     <Text style={stylesfeedback.subtitleS}> Please give a little feedback about your past purchases made from this brand!</Text>
                 </View>
                 <View style={styles.container}>
-                    <Text style={stylesfeedback.title}>Enter Chest Width</Text>
-                    <RadioButton.Group style={stylesfeedback.radio} onValueChange={(value) => handleRadiobtn(value)}
-                    value={usersize}>
-                        <RadioButton.Item label="Width 30-31.5 inches" value="30-31.5"/> 
-                        {/* if the user's chest width size is 32, then accoprding to the brand A's size chart measurement the chest size rane is 32-33.5 */}
-                        <RadioButton.Item label="Width 32-33.5 inches" value="32-33.5"/> 
-                        <RadioButton.Item label="Width 34-35.5 inches" value="34-35.5"/>
-                        <RadioButton.Item label="Width 36-37.5 inches" value="36-37.5"/> 
-                        <RadioButton.Item label="Width 38-39.5 inches" value="38-39.5"/> 
-                        <RadioButton.Item label="Width 40-42.5 inches" value="40-42.5"/> 
-                    </RadioButton.Group>
+                    <Text style={stylesfeedback.title}>Clothing Material</Text>
 
+                    <RadioButton.Group style={stylesfeedback.radio} onValueChange={setMaterial} value={material}>
+                        <RadioButton.Item label="Polyester" value="polyester" />
+                        <RadioButton.Item label="Cotton" value="cotton" />
+                        <RadioButton.Item label="SpandexBlend" value="spandexblend" />
+                    </RadioButton.Group>
+                    {/* <TextInput style={styles.input} onChangeText={text => setMaterial(text)}
+                    defaultValue={material} placeholder="Material"/> */}
+                    
                     {/* cotton is less strechable than polyester */}
-                    <TextInput style={styles.input} onChangeText={text => setMaterial(text)}
-                    defaultValue={material} placeholder="Clothing Material"/>
+                    <TextInput style={styles.input} onChangeText={text => setCw(text)}
+                    defaultValue={cw} placeholder="Chest Width"/>
+                
+                    <TextInput style={styles.input} onChangeText={text => setUksize(text)}
+                    defaultValue={uksize} placeholder="Uk Size"/>
 
                     {/* visit the next page -the size recommendation system*/}
                     <TouchableOpacity style={styles.button} onPress={handleSubmit}>
-                        <Text style={stylesfeedback.buttonText}>Next</Text>
+                        <Text style={stylesfeedback.buttonText}>Done</Text>
                     </TouchableOpacity>
                     
                     {/* skip and just continue using the application */}
-                    <TouchableOpacity onPress={() => navigateTo.navigate('HomeStack')}>
+                    <TouchableOpacity onPress={() => navigateTo.navigate('Bottomstack')}>
                         <Text style={stylesfeedback.textsign}>Skip</Text>
                     </TouchableOpacity>
                     

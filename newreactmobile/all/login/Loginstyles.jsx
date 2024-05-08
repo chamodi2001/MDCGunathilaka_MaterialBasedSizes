@@ -22,6 +22,16 @@ export const styleslogin = StyleSheet.create({
     padding:0,
     textAlign: 'center',
     color:'blue',
+  },
+  titlesold:{
+    color: '#414833',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    fontSize: 45,
+    fontStyle: 'italic',
+    margin: '50%',
+    // margin: 40,
+    padding: 10,
   }
 
 });

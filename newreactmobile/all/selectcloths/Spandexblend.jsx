@@ -15,8 +15,8 @@ const SpandexblendScreen=()=> {
     const [images, setImages] = useState(null);
 
     useEffect(() => { //will render the page firs, then loads whats inside
-        axios.get('http://192.168.239.125:8080/imagesSpandex/listSpandex')
-        // axios.get('http://192.168.1.59:8080/imagesSpandex/listSpandex') //slt
+        // axios.get('http://192.168.239.125:8080/imagesSpandex/listSpandex')
+        axios.get('http://192.168.1.59:8080/imagesSpandex/listSpandex') //slt
             .then((output) => {
                 if (output.data) { //checking whether response/output data is null or 0
                     let images = output.data.map(base64String => 'data:image/png;base64,' + base64String);
@@ -26,8 +26,8 @@ const SpandexblendScreen=()=> {
     }, []);
 
     const handleImage = (id) => {
-        axios.get(`http://192.168.239.125:8080/imagesSpandex/${id}`)
-        // axios.get(`http://192.168.1.59:8080/imagesSpandex/${id}`)
+        // axios.get(`http://192.168.239.125:8080/imagesSpandex/${id}`)
+        axios.get(`http://192.168.1.59:8080/imagesSpandex/${id}`)
         .then((output) => {
                  if (output.data) {
                 let itemid=output.data.itemid;
@@ -36,7 +36,7 @@ const SpandexblendScreen=()=> {
 
                 //displays the item id that clicked throgh the console log
                 console.log("ITEM INDEX CLICKED: ",id);
-                navigateTo.navigate('SizeRec', { itemid:itemid, price: price, stock: stock }); 
+                navigateTo.navigate('SizeRec', { itemid:itemid, price: price, stock: stock, screenName: 'Spandexblend'}); 
             }
         })
         .catch((error) => {

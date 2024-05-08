@@ -17,7 +17,9 @@ const Loading=()=>{
     return(
         <ImageBackground source={require('../../public/images/background/load4.jpg')} style={{width: '100%', height: '100%'}}> 
         <View styles={stylesloading.containerx}>
-            <Text style={stylesloading.appname}>Size Recommending Appication</Text>
+            <Text style={stylesloading.appname}>Welcome To</Text>
+            {/* <Text style={stylesloading.appnamet}> To </Text> */}
+            <Text style={stylesloading.appnamefr}>- MySizing App -</Text>
             <Text style={stylesloading.text}>Loading...</Text>
         </View>
         </ImageBackground>

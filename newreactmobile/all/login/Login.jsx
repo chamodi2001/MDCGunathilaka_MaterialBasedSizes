@@ -5,6 +5,7 @@ import { styles } from '../register/Registerstyles';
 import { Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { CommonActions } from '@react-navigation/native';
 
 import axios from 'axios';
 
@@ -19,63 +20,63 @@ const Login=()=> {
         //
         event.preventDefault();
 
-        const Logindetails = {// a obj with 2 properties
-            //to match with the property names in the backend
-            //for findby method/get req
-            loginusername:loginusername, //leftside- from java BE, rightside- from state hook
-            loginpassword:loginpassword
-        };
-       
-        // // await axios.post('http://192.168.239.125:8080/userlogin', Logindetails)
-        // await axios.post('http://192.168.1.59:8080/userlogin', Logindetails) //slt wifi
-        // .then(output => {
-        //     console.log(output.data);
-        //     Alert.alert('Login successful');
-        //     navigateTo.navigate('Userfeedback'); //obj.func
-        // })
-        
-        // .catch(error => {
-        //     console.log(error);
-        //     // Alert.alert('Please enter a valid Username and Password');
-        //     Alert.alert('Username or Password is Incorrect');
-            
-        // });
-
-        /////////////////////////////////////////////////
-
-        // await axios.post('http://192.168.239.125:8080/userlogin', Logindetails)
-        axios.post('http://192.168.1.59:8080/userlogin', Logindetails)            
-        .then(response => {
-                if (response.status === 200) {
-                  AsyncStorage.setItem('loginusername', loginusername);
-                  Alert.alert('Login successful');
-                  navigateTo.navigate('Userfeedback');
-                }
-              })
-              .catch(error => {
-                console.error('There was an error!', error);
-                Alert.alert('Username or Password is Incorrect');
-              });
-        /////////////////////////
-
-    
+        //validations
         if (!loginusername) {
             //checks username is empty
             Alert.alert('Error', 'Username is required');
             return;//stops the function
           }
-          if (!loginpassword) {
-              Alert.alert('Error', 'Password is required');
-              return;
-              }
-              else if(loginpassword.length < 4){
-                  Alert.alert('Error', 'Enter more than 4 characters');
-                  navigateTo.navigate('EnterSize');
-                  return;
-                  
-              }
+          else if(!loginpassword) {
+            Alert.alert('Error', 'Password is required');
+            return;
+            }
+            else if(loginpassword.length < 4){
+                Alert.alert('Error', 'Enter more than 4 character password');
+                return;
+            }
+            else {
+                const Logindetails = {// a obj with 2 properties
+                    //to match with the property names in the backend
+                    //for findby method/get req
+                    loginusername:loginusername, //leftside- from java BE, rightside- from state hook
+                    loginpassword:loginpassword
+                };
+               
+                /////////////////////////////////////////////////
         
+                // await axios.post('http://192.168.239.125:8080/userlogin', Logindetails)
+                axios.post('http://192.168.1.59:8080/userlogin', Logindetails)            
+                .then(response => {
+                        if (response.status === 200) {
+                          AsyncStorage.setItem('loginusername', loginusername);
+                          Alert.alert('Login Successful');
+                        //   navigateTo.navigate('HomeStack');
+
+                        //cannot go back to the login page again
+                        //by using the 'reset' starts from a new stack. abondan the old stack,
+                        //so xcannot go back to previous stack components
+                        navigateTo.dispatch(
+                            CommonActions.reset({
+                              index: 0,
+                              routes: [
+                                // { name: 'HomeStack' },
+                                { name: 'BrandA' },
+
+                              ],
+                            })
+                          );
+                          //
+                        }
+                      })
+                .catch(error => {
+                console.error('There was an error!', error);
+                Alert.alert('Username or Password is Incorrect');
+                });
+                return true;
+            }
+
     };
+
     return (
         <ImageBackground source={require('../../public/images/background/three.jpg')} style={{width: '100%', height: '100%'}}>
         <View style={styles.container}>

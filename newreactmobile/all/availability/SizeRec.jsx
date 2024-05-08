@@ -21,39 +21,100 @@ const SizeRec=()=>{ //.using the rote prpoty u can access the data,
 
     const route = useRoute(); //getting/ recieving the data from the all material pages 
     const {  itemid, price, stock} = route.params; //parameters 
-    
+    const { screenName } = route.params;
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        //navigate user to the paypal screen
-        navigateTo.navigate('Paypal');    
+
+        //reduce the stock
+        if (stock<=0){
+            Alert.alert('Sorry', 'Sold out' );
+        }
+        else{
+            //navigate user to the paypal screen
+            navigateTo.navigate('Paypal',{ stock: stock }); 
+        }
+           
+    
     };
 
         useEffect(() => {
-            // from asyncStorage get the username of the ogged in user
-            AsyncStorage.getItem('loginusername')
-            //then using the 'username' argument, check if it exists. 
-            .then(username => { 
-                if (username) {
-                axios.get(`http://192.168.1.59:8080/polyester/chestwidth/${username}`)
-                    .then(output => {
-                    setChestWidth(output.data); // update the state value of user's chest wodth
-                    //Recomemding a uk size
-                    axios.get(`http://192.168.1.59:8080/polyester/recommend/${output.data}`)
+            if (screenName === 'PolyesterScreen') {
+                // Fetch data for polyester
+                // from asyncStorage get the username of the ogged in user
+                AsyncStorage.getItem('loginusername')
+                //then using the 'username' argument, check if it exists. 
+                .then(username => { 
+                    if (username) {
+                        //getting that logged in user
+                    axios.get(`http://192.168.1.59:8080/polyester/chestwidth/${username}`)
                         .then(output => {
-                        setUkSize(output.data);
+                        setChestWidth(output.data); // update the state value of the logged in user's chest width
+                        //Recomemding a uk size
+                        axios.get(`http://192.168.1.59:8080/polyester/recommend/${output.data}`)
+                            .then(output => {
+                            setUkSize(output.data);
+                            })
+                            .catch(error => {
+                            console.error('No enough data to recomend a size', error);
+                            });
                         })
                         .catch(error => {
-                        console.error('No enough data to recomend a size', error);
+                        console.error('There was an error!', error);
                         });
-                    })
-                    .catch(error => {
-                    console.error('There was an error!', error);
-                    });
-                }
-            });
-        }, []);
-  
+                    }
+                });
+            } else if (screenName === 'CottonScreennew') {
+                AsyncStorage.getItem('loginusername')
+                //then using the 'username' argument, check if it exists. 
+                .then(username => { 
+                    if (username) {
+                        //getting that logged in user
+                    axios.get(`http://192.168.1.59:8080/cotton/chestwidth/${username}`)
+                        .then(output => {
+                        setChestWidth(output.data); // update the state value of the logged in user's chest width
+                        //Recomemding a uk size
+                        axios.get(`http://192.168.1.59:8080/cotton/recommend/${output.data}`)
+                            .then(output => {
+                            setUkSize(output.data);
+                            })
+                            .catch(error => {
+                            console.error('No enough data to recomend a size', error);
+                            });
+                        })
+                        .catch(error => {
+                        console.error('There was an error!', error);
+                        });
+                    }
+                });
+            }else if (screenName === 'Spandexblend') {
+                AsyncStorage.getItem('loginusername')
+                //then using the 'username' argument, check if it exists. 
+                .then(username => { 
+                    if (username) {
+                        //getting that logged in user
+                    axios.get(`http://192.168.1.59:8080/spandexblend/chestwidth/${username}`)
+                        .then(output => {
+                        setChestWidth(output.data); // update the state value of the logged in user's chest width
+                        //Recomemding a uk size
+                        axios.get(`http://192.168.1.59:8080/spandexblend/recommend/${output.data}`)
+                            .then(output => {
+                            setUkSize(output.data);
+                            })
+                            .catch(error => {
+                            console.error('No enough data to recomend a size', error);
+                            });
+                        })
+                        .catch(error => {
+                        console.error('There was an error!', error);
+                        });
+                    }
+                });
+            }
+        }, [screenName]); // Add screenName as a dependency to the useEffect hook
+            
+
+
 
     return(
         //full image background
@@ -70,7 +131,7 @@ const SizeRec=()=>{ //.using the rote prpoty u can access the data,
             </View>
             <Text style={stylesSizeRec.title}>Itemid: {itemid}</Text>
 
-            <Text style={stylesSizeRec.title}>Price: {price} LKR</Text>
+            <Text style={stylesSizeRec.title}>Price: {price} USD</Text>
 
             <Text style={stylesSizeRec.title}>Stock: {stock}</Text>
 

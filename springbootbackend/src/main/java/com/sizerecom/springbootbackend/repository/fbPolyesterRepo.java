@@ -4,9 +4,10 @@ import com.sizerecom.springbootbackend.model.Feedback;
 import com.sizerecom.springbootbackend.model.Image;
 import com.sizerecom.springbootbackend.model.fbPolyester;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+@Repository
 public interface fbPolyesterRepo extends JpaRepository<fbPolyester,Long> {
 
     fbPolyester findByUsercw(double cw);
