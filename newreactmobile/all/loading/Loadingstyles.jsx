@@ -32,4 +32,14 @@ export const stylesloading = StyleSheet.create({
         // color:'#9d4edd'
         color:'#9d4edd',
     },
+    brand:{
+        textAlign:'center',
+        marginTop:'15%',
+        fontSize:40,
+        fontWeight:'bold',
+        fontStyle:'italic',
+        padding:0,
+        // color:'#9d4edd'
+        color:'#414833',
+    }
 });
