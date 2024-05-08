@@ -8,14 +8,38 @@ import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
 import { Image } from 'react-native';
 import { CommonActions } from '@react-navigation/native';
+import { useRoute } from '@react-navigation/native';
 
 const Paypal=()=> {
     
     const navigateTo = useNavigation(); 
 
+    const route = useRoute(); //getting/ recieving the data from the all material pages 
+    const {stock} = route.params; //parameters
+
     const handlePress = () => {
+
+      //paypal link
         const url = 'https://www.sandbox.paypal.com/ncp/payment/RSJ68MHCNPY5E';
         Linking.openURL(url);
+
+        //when click on the buy button , reduce the stock by one
+        console.log("Stock is: ",stock); //see the curent stock on consolelog
+        //reduce the stock
+        const newStock=stock-1;
+        console.log("Stock is: ",newStock);
+        //
+        axios.put(`http://192.168.1.59:8080/stockReduce`,{stock: newStock,}) //slt
+        .then(output => {
+          if (output.status === 200) { //if response is success
+              console.log('Successfully updated the stock',output.data);
+              navigateTo.navigate('Login');
+              console.log(output.data);
+          }
+          })
+          .catch(error => {
+              console.error('Error:', error);
+          });
 
         // Alert.alert('Payment success!');
         // navigateTo.navigate('Userfeedback');

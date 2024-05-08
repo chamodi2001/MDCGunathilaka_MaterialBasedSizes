@@ -59,7 +59,9 @@ const Login=()=> {
                             CommonActions.reset({
                               index: 0,
                               routes: [
-                                { name: 'HomeStack' },
+                                // { name: 'HomeStack' },
+                                { name: 'BrandA' },
+
                               ],
                             })
                           );
