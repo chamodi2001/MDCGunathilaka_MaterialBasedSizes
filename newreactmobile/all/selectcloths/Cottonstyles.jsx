@@ -19,8 +19,8 @@ export const stylescotton = StyleSheet.create({
     padding:5,
     borderWidth:1,
     borderRadius: 10,
-    // backgroundColor: '#FDFAFA', e4c1f9,fff0f3.e0b1cb
-    backgroundColor: '#e0b1cb',
+    backgroundColor: '#F2EFEE',
+    // backgroundColor: '#e0b1cb',
     borderColor: 'black',
     alignItems: 'center',
   },

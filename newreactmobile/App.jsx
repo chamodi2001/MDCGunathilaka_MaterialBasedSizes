@@ -21,8 +21,8 @@ import { NavigationContainer } from '@react-navigation/native'; //to wrap the st
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Loading from './all/loading/Loading';
-import Register from './all/register/Register';
 import Login from './all/login/Login';
+import Register from './all/register/Register';
 import EnterSize from './all/usersize/Entersize'; 
 import Material from './all/selectcloths/Material';
 import CottonScreennew from './all/selectcloths/CottonScreennew';
@@ -31,6 +31,8 @@ import SpandexblendScreen from './all/selectcloths/Spandexblend';
 import SizeRec from './all/availability/SizeRec';
 import Userfeedback from './all/feedback/Userfeedback';
 import Paypal from './all/payment/Paypal';
+import Soldout from './all/soldout/Soldout';
+import BrandA from './all/brand/BrandA';
 
 
 import BottomNavbar from './all/bottomnav/BottomNavbar';
@@ -38,6 +40,7 @@ import BottomNavbar from './all/bottomnav/BottomNavbar';
 const Stackpath = createStackNavigator(); 
 const tabnav= createBottomTabNavigator();
 const homenav= createBottomTabNavigator();
+
 
 const HomeStack=()=>{
   return(
@@ -100,10 +103,12 @@ const App = () => {
        <Stackpath.Navigator>
 
           <Stackpath.Screen name="Loading" component={Loading} options={{ headerShown: false }}/>
+          {/* press login then new stack  */}
           <Stackpath.Screen name="Login" component={Login} options={{ headerShown: false }}/>
           <Stackpath.Screen name="Register" component={Register} options={{ headerShown: false }}/>
           {/* <Stackpath.Screen name="EnterSize" component={EnterSize} options={{ headerShown: false }}/> */}
 
+          <Stackpath.Screen name="BrandA" component={BrandA} options={{ headerShown: false }}/>
           {/* the home stack-'Mertrial' page */}
           <Stackpath.Screen name="HomeStack" component={HomeStack} options={{ headerShown: false }}/> 
 
@@ -112,9 +117,10 @@ const App = () => {
 
           <Stackpath.Screen name="SizeRec" component={SizeRec} options={{ headerShown: false }}/>
 
-          <Stackpath.Screen name="Paypal" component={Paypal} options={{ headerShown: false }}/>
+          {/* press buy then new stack  */}
+          <Stackpath.Screen name="Paypal" component={Paypal} options={{ headerShown: false }}/> 
+        
           <Stackpath.Screen name="Userfeedback" component={Userfeedback} options={{ headerShown: false }}/>
-
          
       </Stackpath.Navigator>
     </NavigationContainer>

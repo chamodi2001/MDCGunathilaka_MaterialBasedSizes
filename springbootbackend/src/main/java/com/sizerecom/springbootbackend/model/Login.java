@@ -7,6 +7,7 @@ import jakarta.persistence.Id;
 @Entity
 public class Login {
     @Id
+//    @GeneratedValue(strategy = GenerationType.AUTO)
     @GeneratedValue //to auto generate
     private long id;
     private String loginusername;

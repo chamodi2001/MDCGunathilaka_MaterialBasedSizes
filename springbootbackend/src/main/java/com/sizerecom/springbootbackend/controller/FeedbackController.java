@@ -23,42 +23,48 @@ public class FeedbackController {
 //        return feedbackRepoObj.save(userfeedback); //obj.method //the save()- method is from the FeedbackRepo interface that contains Jpa framework/interface
 //    }
 
-    @Autowired
-    private fbPolyesterRepo fbPolyesterRepoRepoObjf;
 
     @Autowired
-    private fbCottonRepo fbCottonRepoObjf;
+    private fbPolyesterRepo fbPolyesterRepoRepoObj;
 
     @Autowired
-    private fbSpandexRepo fbSpandexRepoObjf;
+    private fbCottonRepo fbCottonRepoObj;
+
+    @Autowired
+    private fbSpandexRepo fbSpandexRepoObj;
 
 
-    @PostMapping("/userfeedback")
-    public void enterFeedback(@RequestBody Feedback FeedbackObj) { //use feedback page data as an argumrnt
-        if (FeedbackObj.getMaterial().equals("polyester")) { //if the value in feedback page equals to "polyester"
-            //calling the fbpolyester table- has feedback data about polyester material
+    @PostMapping("/saveMaterialData")
+
+    public ResponseEntity<?> saveMaterialData(@RequestBody Feedback FeedbackObj) { //use feedback page data as an argumrnt
+        //save all feedback to the feedback table
+        feedbackRepoObj.save(FeedbackObj);
+
+        // Assuming you have different repositories for each material
+        if ("polyester".equals(FeedbackObj.getMaterial())) {
             fbPolyester fbPolyesterObj = new fbPolyester();
             //getting the user inserted Uksize from the feedback (FeedbackObj.getUkSizefb(), then
             //set or pass that value to the fbPolyester table to categorize them
-            fbPolyesterObj.setUksize(FeedbackObj.getUkSizefb());
             fbPolyesterObj.setUsercw(FeedbackObj.getChestWidthfb());
+            fbPolyesterObj.setUksize(FeedbackObj.getUkSizefb());
 
-            //using the save func save all the data that is coming from fbPolyester model.
-            fbPolyesterRepoRepoObjf.save(fbPolyesterObj);
-        }
-        else if (FeedbackObj.getMaterial().equals("cotton")) {
+            //posting a new record with uksize n cw to the fbPolyester table.
+            fbPolyesterRepoRepoObj.save(fbPolyesterObj);
+
+        } else if ("cotton".equals(FeedbackObj.getMaterial())) {
             fbCotton fbCottonObj = new fbCotton();
-            fbCottonObj.setUksize(FeedbackObj.getUkSizefb());
             fbCottonObj.setUsercw(FeedbackObj.getChestWidthfb());
-            fbCottonRepoObjf.save(fbCottonObj);
-        }
-        else if (FeedbackObj.getMaterial().equals("spandexblend")) {
+            fbCottonObj.setUksize(FeedbackObj.getUkSizefb());
+
+            fbCottonRepoObj.save(fbCottonObj);
+
+        } else if ("spandexblend".equals(FeedbackObj.getMaterial())) {
             fbSpandex fbSpandexObj = new fbSpandex();
-            fbSpandexObj.setUksize(FeedbackObj.getUkSizefb());
             fbSpandexObj.setUsercw(FeedbackObj.getChestWidthfb());
-            fbSpandexRepoObjf.save(fbSpandexObj);
+            fbSpandexObj.setUksize(FeedbackObj.getUkSizefb());
+            fbSpandexRepoObj.save(fbSpandexObj);
         }
 
+        return ResponseEntity.ok().build();
     }
-
 }

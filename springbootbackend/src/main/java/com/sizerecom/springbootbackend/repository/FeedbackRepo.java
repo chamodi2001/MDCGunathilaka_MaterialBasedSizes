@@ -8,6 +8,7 @@ public interface FeedbackRepo  extends JpaRepository<Feedback,Long> {
     //for find by - use the getMathod name in the model
 //        Feedback finSelecdBytedCW(String selectedCW);
 //        Feedback findByMaterial(String material);
+    Feedback findById(long id);
 
 
 }

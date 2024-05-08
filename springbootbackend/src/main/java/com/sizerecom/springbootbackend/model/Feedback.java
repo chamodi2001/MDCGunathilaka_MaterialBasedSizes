@@ -2,6 +2,7 @@ package com.sizerecom.springbootbackend.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
@@ -9,7 +10,8 @@ import jakarta.persistence.Id;
 //getting the user feedbacks every fedback.
 public class Feedback {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
+
     private long id;
     private int ukSizefb; //the uk size
     private double chestWidthfb; //the chest width
@@ -48,4 +50,7 @@ public class Feedback {
     public void setMaterial(String material) {
         this.material = material;
     }
+
+    ///////
+
 }
