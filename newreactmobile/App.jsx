@@ -35,7 +35,6 @@ import Soldout from './all/soldout/Soldout';
 import BrandA from './all/brand/BrandA';
 
 
-import BottomNavbar from './all/bottomnav/BottomNavbar';
 // import { SafeAreaProvider } from 'react-native-safe-area-context';    
 const Stackpath = createStackNavigator(); 
 const tabnav= createBottomTabNavigator();

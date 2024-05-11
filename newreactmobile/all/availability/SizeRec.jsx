@@ -10,6 +10,7 @@ import { stylesmaterial } from '../selectcloths/Materialstyles';
 import { useRoute } from '@react-navigation/native';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { BASE_URL } from '../config';
 
 
 const SizeRec=()=>{ //.using the rote prpoty u can access the data,
@@ -47,11 +48,11 @@ const SizeRec=()=>{ //.using the rote prpoty u can access the data,
                 .then(username => { 
                     if (username) {
                         //getting that logged in user
-                    axios.get(`http://192.168.1.59:8080/polyester/chestwidth/${username}`)
+                    axios.get(`${BASE_URL}/polyester/chestwidth/${username}`)
                         .then(output => {
                         setChestWidth(output.data); // update the state value of the logged in user's chest width
                         //Recomemding a uk size
-                        axios.get(`http://192.168.1.59:8080/polyester/recommend/${output.data}`)
+                        axios.get(`${BASE_URL}/polyester/recommend/${output.data}`)
                             .then(output => {
                             setUkSize(output.data);
                             })
@@ -70,11 +71,11 @@ const SizeRec=()=>{ //.using the rote prpoty u can access the data,
                 .then(username => { 
                     if (username) {
                         //getting that logged in user
-                    axios.get(`http://192.168.1.59:8080/cotton/chestwidth/${username}`)
+                    axios.get(`${BASE_URL}/cotton/chestwidth/${username}`)
                         .then(output => {
                         setChestWidth(output.data); // update the state value of the logged in user's chest width
                         //Recomemding a uk size
-                        axios.get(`http://192.168.1.59:8080/cotton/recommend/${output.data}`)
+                        axios.get(`${BASE_URL}/cotton/recommend/${output.data}`)
                             .then(output => {
                             setUkSize(output.data);
                             })
@@ -93,11 +94,11 @@ const SizeRec=()=>{ //.using the rote prpoty u can access the data,
                 .then(username => { 
                     if (username) {
                         //getting that logged in user
-                    axios.get(`http://192.168.1.59:8080/spandexblend/chestwidth/${username}`)
+                    axios.get(`${BASE_URL}/spandexblend/chestwidth/${username}`)
                         .then(output => {
                         setChestWidth(output.data); // update the state value of the logged in user's chest width
                         //Recomemding a uk size
-                        axios.get(`http://192.168.1.59:8080/spandexblend/recommend/${output.data}`)
+                        axios.get(`${BASE_URL}/spandexblend/recommend/${output.data}`)
                             .then(output => {
                             setUkSize(output.data);
                             })

@@ -7,6 +7,7 @@ import { Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Picker } from '@react-native-picker/picker';
 import axios from 'axios';
+import { BASE_URL } from '../config';
 
 //saving the path of images 
 const PolyesterScreen=()=> {
@@ -16,7 +17,7 @@ const PolyesterScreen=()=> {
 
     useEffect(() => { //will render the pictures fro,m the server to display on the application
         // axios.get('http://192.168.239.125:8080/images/list')
-        axios.get('http://192.168.1.59:8080/images/list') //slt
+        axios.get(`${BASE_URL}/images/list`) //slt
             .then((output) => {
                 if (output.data) { //checking whether response/output data is null or 0
                     let images = output.data.map(base64String => 'data:image/png;base64,' + base64String);
@@ -28,7 +29,7 @@ const PolyesterScreen=()=> {
     const handleImage = (id) => {
         //according to the rendered images/items id, can transfer the database table info
         // axios.get(`http://192.168.239.125:8080/images/${id}`)
-        axios.get(`http://192.168.1.59:8080/images/${id}`) //slt
+        axios.get(`${BASE_URL}/images/${id}`) //slt
         .then((output) => {
                  if (output.data) {
                 let itemid=output.data.itemid;

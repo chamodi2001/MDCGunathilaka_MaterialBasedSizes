@@ -7,7 +7,7 @@ import { Alert, ImageBackground} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { RadioButton } from 'react-native-paper';
 import { stylescotton } from '../selectcloths/Cottonstyles';
-
+import { BASE_URL } from '../config';
 
 import axios from 'axios';
 
@@ -43,7 +43,7 @@ const Userfeedback=()=> {
                     chestWidthfb: cw, // changed from cw
                     ukSizefb: uksize // changed from uksize
                 };
-                axios.post('http://192.168.1.59:8080/saveMaterialData', feedbacks)
+                axios.post(`${BASE_URL}/saveMaterialData`, feedbacks)
                     .then(output => {
                         console.log('Feedback submitted:', output.data);
                         Alert.alert('Successful', 'Feedback Recorded');

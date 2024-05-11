@@ -8,7 +8,7 @@ const Loading=()=>{
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            navigation.navigate('Register');
+            navigation.navigate('Login');
         }, 2000); // 3000ms = 3s
 
         return () => clearTimeout(timer);
