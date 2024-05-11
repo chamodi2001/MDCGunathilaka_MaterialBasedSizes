@@ -35,9 +35,9 @@ public class fbCottonController {
     @GetMapping("/cotton/chestwidth/{username}")
 //
     public ResponseEntity<Double> getLoggedUsercw(@PathVariable String username) {
-        Register RegisterObjcw = RegisterRepoObj.findByUsername(username);
-        if (RegisterObjcw != null) {
-            return new ResponseEntity<>(RegisterObjcw.getChestwidth(), HttpStatus.OK);
+        Register RegisterObj = RegisterRepoObj.findByUsername(username);
+        if (RegisterObj != null) {
+            return new ResponseEntity<>(RegisterObj.getChestwidth(), HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
