@@ -46,51 +46,51 @@ public ResponseEntity<Double> getLoggedUsercw(@PathVariable String username) {
 }
 
     @GetMapping("/polyester/recommend/{cw}")
-    public int getFittingUkSize(@PathVariable double cw) { // the logged-in user's chestwith is called cw
+    public int getSizeRecommend(@PathVariable double cw) { // the logged-in user's chestwith is called cw
         // find all the polyester material feedback data from fbPolyester model/ table
         List<fbPolyester> fbpolDataObj = fbPolyesterRepoObj.findAll();
 
-        // Group the feedback data by UK size
+        //should group by the Uk sizes
         Map<Integer, List<fbPolyester>> groupedByUkSize = fbpolDataObj.stream()
                 .collect(Collectors.groupingBy(fbPolyester::getUksize));  //this groups/ seperate the data by uk Size using 'Collectors.groupingBy' method.
 
-        // Calculate the min and max chest width for each UK size
-        Map<Integer, DoubleSummaryStatistics> chestWidthStats = groupedByUkSize.entrySet().stream()
+        //getting the most appeared chest width size for each uk sizes
+        Map<Integer, List<Double>> mostFrequentChestWidthsByUkSize = new HashMap<>();
+        for (Map.Entry<Integer, List<fbPolyester>> entry : groupedByUkSize.entrySet()) {
+            Map<Double, Long> chestWidthCounts = entry.getValue().stream()
+                    .collect(Collectors.groupingBy(fbPolyester::getUsercw, Collectors.counting()));
+            //getting specific cw and its count
+            List<Double> mostFrequentChestWidths = chestWidthCounts.entrySet().stream()
+                    //filter the maximum count of cw ranges/find the cw that apears the most
+                    .filter(e -> e.getValue().equals(Collections.max(chestWidthCounts.values())))
+                    .map(Map.Entry::getKey)
+                    //make a list of the mostly appeared cws
+                    .collect(Collectors.toList());
+            //stored in the bellow varible- the uk size and its most frequently appeared cw
+            mostFrequentChestWidthsByUkSize.put(entry.getKey(), mostFrequentChestWidths);
+        }//the entery key is where it stores the uk size and its most frequently ocurring chest widths
+        Map<Integer, DoubleSummaryStatistics> chestWidthStats = mostFrequentChestWidthsByUkSize.entrySet().stream()
                 .collect(Collectors.toMap(
                         Map.Entry::getKey,
-                        e -> e.getValue().stream().collect(Collectors.summarizingDouble(fbPolyester::getUsercw)) //gettinh the fbPolyester table column Usercw
-                        //using this 'Collectors.summarizingDouble' method it can allocate the min and max for each uksize.
+                        e -> e.getValue().stream().collect(Collectors.summarizingDouble(Double::doubleValue))
                 ));
 
-        //////////////////
-        // list the uk sizes that are for the specific cw
-        List<Integer> fittingUkSizes = new ArrayList<>();
-        for (Map.Entry<Integer, DoubleSummaryStatistics> entry : chestWidthStats.entrySet()) {
-            if (cw >= entry.getValue().getMin() && cw <= entry.getValue().getMax()) {
+        //Calculate the min and max cw range for each uk size
+        List<Integer> fittingUkSizes = new ArrayList<>(); //list the fiiting uk sizes for logged in user
+        for (Map.Entry<Integer, DoubleSummaryStatistics> entry : chestWidthStats.entrySet()) { //have the chestwidths that assosiated with that uk size
+            if (cw >= entry.getValue().getMin() && cw <= entry.getValue().getMax()) { //getting the min and max cw range
                 fittingUkSizes.add(entry.getKey());
+                //if a fiiting uk size is found for the user logged in cw, then add that to the fittingUksize list
             }
         }
+
+        //Check if the user's chest width falls within the min and max range of any UK size.
+        //if the user entered cw is in a range of uk size, get/ return that uk size or else response error
         if (fittingUkSizes.isEmpty()) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No fitting UK size found for this chest width");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No matching uk size data for this cw ");
         }
-
-
-        Map<Integer, Long> ukSizeCounts = fittingUkSizes.stream()
-                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-        //to find the uk sizes that has most appeared to a specif chest width
-        return Collections.max(ukSizeCounts.entrySet(), Map.Entry.comparingByValue()).getKey();
-
-        //////////////////////////////
-
-//        // finding if the logged in user's cw is in any chest width ranges of min and max usercw(fbPolyester table
-//        for (Map.Entry<Integer, DoubleSummaryStatistics> entry : chestWidthStats.entrySet()) {
-//            if (cw >= entry.getValue().getMin() && cw <= entry.getValue().getMax()) {
-//                return entry.getKey();
-//            }
-//        }
-//
-//        // if a matching uk size is not found,
-//        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No fitting UK size found for this chest width");
+        //returning the fiiting uk size.
+        return fittingUkSizes.get(0); //rturn te first element of the list, from the many uk sizes
     }
 
 }

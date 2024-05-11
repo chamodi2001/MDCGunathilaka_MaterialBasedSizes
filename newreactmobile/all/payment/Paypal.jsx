@@ -9,6 +9,7 @@ import axios from 'axios';
 import { Image } from 'react-native';
 import { CommonActions } from '@react-navigation/native';
 import { useRoute } from '@react-navigation/native';
+import { BASE_URL } from '../config';
 
 const Paypal=()=> {
     
@@ -29,7 +30,7 @@ const Paypal=()=> {
         const newStock=stock-1;
         console.log("Stock is: ",newStock);
         //
-        axios.put(`http://192.168.1.59:8080/stockReduce`,{stock: newStock,}) //slt
+        axios.put(`${BASE_URL}/stockReduce`,{stock: newStock,}) //slt
         .then(output => {
           if (output.status === 200) { //if response is success
               console.log('Successfully updated the stock',output.data);

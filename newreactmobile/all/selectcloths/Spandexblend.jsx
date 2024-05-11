@@ -7,7 +7,7 @@ import { useNavigation } from '@react-navigation/native';
 import { Picker } from '@react-native-picker/picker';
 import axios from 'axios';
 import {stylesmaterialwise} from './Materialwisestyles';
-
+import { BASE_URL } from '../config';
 
 const SpandexblendScreen=()=> {
     const navigateTo = useNavigation(); 
@@ -16,7 +16,7 @@ const SpandexblendScreen=()=> {
 
     useEffect(() => { //will render the page firs, then loads whats inside
         // axios.get('http://192.168.239.125:8080/imagesSpandex/listSpandex')
-        axios.get('http://192.168.1.59:8080/imagesSpandex/listSpandex') //slt
+        axios.get(`${BASE_URL}/imagesSpandex/listSpandex`) //slt
             .then((output) => {
                 if (output.data) { //checking whether response/output data is null or 0
                     let images = output.data.map(base64String => 'data:image/png;base64,' + base64String);
@@ -27,7 +27,7 @@ const SpandexblendScreen=()=> {
 
     const handleImage = (id) => {
         // axios.get(`http://192.168.239.125:8080/imagesSpandex/${id}`)
-        axios.get(`http://192.168.1.59:8080/imagesSpandex/${id}`)
+        axios.get(`${BASE_URL}/imagesSpandex/${id}`)
         .then((output) => {
                  if (output.data) {
                 let itemid=output.data.itemid;

@@ -6,7 +6,7 @@ import { Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { CommonActions } from '@react-navigation/native';
-
+import { BASE_URL } from '../config';
 import axios from 'axios';
 
 
@@ -30,10 +30,11 @@ const Login=()=> {
             Alert.alert('Error', 'Password is required');
             return;
             }
-            else if(loginpassword.length < 4){
-                Alert.alert('Error', 'Enter more than 4 character password');
+            else if(loginpassword.length < 8){
+                Alert.alert('Error', 'Enter a 8 character password');
                 return;
             }
+            
             else {
                 const Logindetails = {// a obj with 2 properties
                     //to match with the property names in the backend
@@ -45,7 +46,7 @@ const Login=()=> {
                 /////////////////////////////////////////////////
         
                 // await axios.post('http://192.168.239.125:8080/userlogin', Logindetails)
-                axios.post('http://192.168.1.59:8080/userlogin', Logindetails)            
+                axios.post(`${BASE_URL}/userlogin`, Logindetails)             
                 .then(response => {
                         if (response.status === 200) {
                           AsyncStorage.setItem('loginusername', loginusername);

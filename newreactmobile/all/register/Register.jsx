@@ -4,7 +4,7 @@ import { styles } from './Registerstyles';
 import {Login} from '../login/Login';
 import axios from 'axios';
 import {styleslogin} from '../login/Loginstyles';
-
+import { BASE_URL } from '../config';
 //
 import { Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
@@ -31,10 +31,18 @@ const Register=()=> {
                   Alert.alert('Error', 'Password is required');
                   return;
               }
-              else if(password.length < 4){
-                      Alert.alert('Error', 'Enter more than 4 character password');
+              else if(password.length < 8){
+                      Alert.alert('Error', 'Enter a 8 character password');
                       return;
               }
+            //   else if(!(/^(?=.*[A-Z])(?=.*\d)(?=.*[&#$@])[A-Za-z\d&#$@]{6,}$/.test(loginpassword))){   
+            //     Alert.alert('Error', 'Must include a Number, Uppercase letter, a Special character (&, $, #, @)');
+            //     return;
+            //   }
+                else if(password.length < 8){
+                    Alert.alert('Error', 'Enter a 8 character password');
+                    return;
+                }
               //age must be between 0 to 100
               else if(isNaN(age) || age<0 || age>100){
                   Alert.alert('Error', 'Enter a valid age');
@@ -49,7 +57,7 @@ const Register=()=> {
             const Register = { username, password, age, chestwidth };
 
             // await axios.post('http://192.168.239.125:8080/user', Register);
-            axios.post('http://192.168.1.59:8080/user', Register) //slt wifi    
+            axios.post(`${BASE_URL}/user`, Register) //slt wifi    
             .then(response => {
                     if (response.status === 200) { //if response is success
                         window.alert('Successfully added New User');
