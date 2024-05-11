@@ -1,0 +1,26 @@
+we use interfaces to use the frameworks or libraries.
+you use a class model as an argument for a interface
+
+model class is your whre your model or entity/table is.
+in the xRepo interface it includes the jpa framework with its methods, jpa framework provides crud operation methods such as, findbyID(),find all(),existsById(),save(),deleteById() and other.
+
+xController class- is where u use annotations such as @PostMapping @GetMapping, etc.. in there we also call the xRepository interfaces. 
+,futhermore inside a controller , sice we use the jpa methods(save(),findByusername()), we have to to call the xRepo to use the methods.
+
+
+ @Autowired //instance or object of the RegisterRepo can be used in the RegisterController(this class)
+   //since Register repo is an interface , cannot simply create an instance/object of that interface or call that interface
+   //if we do not use autowired annotation, we have to first get the methods thgat are in the RegisterRepo,
+
+      public class RegisterRepoImpl implements RegisterRepo {
+           //write the methods of RegisterRepo here
+     //}
+
+     //then after getting the required methods we have to create the specific controller,
+
+       public class RegisterController {
+          private RegisterRepo registerRepo = new RegisterRepoImpl();
+          //other controller codes//
+       }
+
+    private RegisterRepo registerRepoObj; //interface and object //in here we call this to import the save method from RegisterRepo interface, jpa framework
