@@ -6,4 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ImageCottonRepo extends JpaRepository<ImageCotton, Long> {
     ImageCotton findByItemid(long id);
+    ImageCotton findByStock(int stock);
 }

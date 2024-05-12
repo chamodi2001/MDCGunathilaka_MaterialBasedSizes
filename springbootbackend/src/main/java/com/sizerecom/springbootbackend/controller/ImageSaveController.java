@@ -1,6 +1,7 @@
 package com.sizerecom.springbootbackend.controller;
 
 import com.sizerecom.springbootbackend.model.Image;
+import com.sizerecom.springbootbackend.model.ImageCotton;
 import com.sizerecom.springbootbackend.repository.ImageRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -55,5 +56,26 @@ public class ImageSaveController {
         return ImageRepoObj.findById(id)
                 .orElseThrow(() -> new RuntimeException("Image not found with id " + id));
     }
+    /////////
+//    @PutMapping("/stockReduce")
+//    public Image PutStockReduceP(@RequestBody Integer stock) {
+//        //find the erlier stock
+//        Image earlierStock = ImageRepoObj.findByStock(stock);
+//
+//        // from the earlier stock -1 to get the new stock, when user clicks buy
+//        earlierStock.setStock(earlierStock.getStock() - 1);
+//
+//        // Save the updated stock
+//        return ImageRepoObj.save(earlierStock);
+//    }
+
+    ////
+//    @PostMapping("/cot/updatedStock/{id}")
+//    public ImageCotton updateStock(@PathVariable Long id, @RequestBody Integer stock) {
+//        ImageCotton imageCotton = ImageCottonRepoObj.findById(id)
+//                .orElseThrow(() -> new RuntimeException("ImageCotton not found with id " + id));
+//        imageCotton.setStock(stock);
+//        return ImageCottonRepoObj.save(imageCotton);
+//    }
     
 }

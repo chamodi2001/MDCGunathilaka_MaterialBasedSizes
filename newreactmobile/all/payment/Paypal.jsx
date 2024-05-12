@@ -28,30 +28,27 @@ const Paypal=()=> {
         console.log("Stock is: ",stock); //see the curent stock on consolelog
         //reduce the stock
         const newStock=stock-1;
-        console.log("Stock is: ",newStock);
+        console.log("Updated is: ",newStock);
         //
-        axios.put(`${BASE_URL}/stockReduce`,{stock: newStock,}) //slt
-        .then(output => {
-          if (output.status === 200) { //if response is success
-              console.log('Successfully updated the stock',output.data);
-              navigateTo.navigate('Login');
-              console.log(output.data);
-          }
-          })
-          .catch(error => {
-              console.error('Error:', error);
-          });
-
-        // Alert.alert('Payment success!');
-        // navigateTo.navigate('Userfeedback');
+        // navigateTo.dispatch(
+        //     CommonActions.reset({
+        //       index: 0,
+        //       routes: [
+        //       { name: 'Userfeedback'},
+        //       ],
+        //     })
+        //   );
         navigateTo.dispatch(
-            CommonActions.reset({
-              index: 0,
-              routes: [
-                { name: 'Userfeedback' },
-              ],
-            })
-          );
+          CommonActions.reset({
+            index: 0,
+            routes: [
+              { 
+                name: 'Userfeedback', 
+                params: { newStock: newStock } 
+              },
+            ],
+          })
+        );
     }
 
     return (
