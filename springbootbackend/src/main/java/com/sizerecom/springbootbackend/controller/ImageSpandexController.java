@@ -8,9 +8,7 @@ import com.sizerecom.springbootbackend.repository.ImageSpandexRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
 import java.util.Base64;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -23,29 +21,30 @@ public class ImageSpandexController {
 
     @GetMapping("imagesSpandex/listSpandex")
     public List<String> getImageSpandex() throws IOException {
-        //consider the file path is a String
-        List<String> imagePaths = List.of("D:\\desktop D\\3rd year\\PUSL3190_MDCGunathilaka\\newreactmobile\\public\\images\\Spandexblendcloths/one.jpg",
-                "D:\\desktop D\\3rd year\\PUSL3190_MDCGunathilaka\\newreactmobile\\public\\images\\Spandexblendcloths/threespandex.jpg");
+        List<String> imagePaths = List.of(
+                "/span1.JPG",
+                "/span2.JPG"
+        );
 
-        //converts the file paths into Base64 string
-        //map func would give a list,
         return imagePaths.stream().map(imagePath -> {
             try {
-                //file claas is an i/o operation in java
-                File fileobj = new File(imagePath);
+                // Get the image as a stream from the classpath
+                InputStream is = getClass().getResourceAsStream(imagePath);
+                if (is == null) {
+                    throw new FileNotFoundException("File not found on classpath: " + imagePath);
+                }
 
-                //from that file, read the data
-                FileInputStream readfile = new FileInputStream(fileobj);
-                byte[] bytes = new byte[(int) fileobj.length()];
-                readfile.read(bytes);
-                readfile.close();
+                // Read the data from the stream
+                byte[] bytes = is.readAllBytes();
+                is.close();
 
-                // converts the file path to byte array, then to a Base64 string
+                // Convert the byte array to a Base64 string
                 return Base64.getEncoder().encodeToString(bytes);
-            } catch (IOException e) { //if input output exception, then display a runtime error
+            } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         }).collect(Collectors.toList());
+
     }
 
     @GetMapping("imagesSpandex/{id}") //getting the id of clothing materials.
