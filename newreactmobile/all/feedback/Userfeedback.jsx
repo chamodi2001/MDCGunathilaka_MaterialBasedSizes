@@ -8,6 +8,7 @@ import { useNavigation } from '@react-navigation/native';
 import { RadioButton } from 'react-native-paper';
 import { stylescotton } from '../selectcloths/Cottonstyles';
 import { BASE_URL } from '../config';
+import { useRoute } from '@react-navigation/native';
 
 import axios from 'axios';
 
@@ -15,9 +16,15 @@ import axios from 'axios';
 const Userfeedback=()=> {
     const navigateTo = useNavigation(); 
 
+    const route = useRoute(); //getting/ recieving the data from the all material pages 
+    const {newStock} = route.params; //parameters
+
     const [material, setMaterial] =useState('');
     const [cw, setCw] =useState('');
     const [uksize, setUksize] =useState('');
+
+    console.log('the new Stcok thta passed to feedback page',newStock);
+    console.log('passing this newStock Again to SizeRec page');
 
         const handleSubmit = async (event) => {
             event.preventDefault();

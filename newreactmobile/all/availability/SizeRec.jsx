@@ -23,6 +23,8 @@ const SizeRec=()=>{ //.using the rote prpoty u can access the data,
     const route = useRoute(); //getting/ recieving the data from the all material pages 
     const {  itemid, price, stock} = route.params; //parameters 
     const { screenName } = route.params;
+    const { newStock } = route.params;
+
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -35,7 +37,7 @@ const SizeRec=()=>{ //.using the rote prpoty u can access the data,
             //navigate user to the paypal screen
             navigateTo.navigate('Paypal',{ stock: stock }); 
         }
-           
+              
     
     };
 
@@ -134,6 +136,8 @@ const SizeRec=()=>{ //.using the rote prpoty u can access the data,
 
             <Text style={stylesSizeRec.title}>Price: {price} USD</Text>
 
+            {/* <Text style={styles.chestWidth}>Old Stock: {stock}</Text>
+            <Text style={stylesSizeRec.title}>New Stock: {newStock}</Text> */}
             <Text style={stylesSizeRec.title}>Stock: {stock}</Text>
 
             {/* user can buy the item, then have to pay throgh paypal */}

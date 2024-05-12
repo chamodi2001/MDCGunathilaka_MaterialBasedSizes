@@ -1,13 +1,12 @@
 package com.sizerecom.springbootbackend.controller;
 
 import com.sizerecom.springbootbackend.model.Image;
+import com.sizerecom.springbootbackend.model.ImageCotton;
 import com.sizerecom.springbootbackend.model.ImageSpandex;
 import com.sizerecom.springbootbackend.repository.ImageRepo;
 import com.sizerecom.springbootbackend.repository.ImageSpandexRepo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -54,4 +53,5 @@ public class ImageSpandexController {
         return ImageSpandexRepoObj.findById(id)
                 .orElseThrow(() -> new RuntimeException("Image not found with id " + id));
     }
+
 }

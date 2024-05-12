@@ -1,4 +1,8 @@
 Download the 'newreactmobile' and 'springbootbackend' zip folders to your machine. Unzip them.
+*On Android Studio,
+ Install the Android SDK- Android 14 (UpsideDownCake) 
+ Download Android SDK Platform 34 with, Intel x86 Atom_64 System Image or Google APIs Intel x86 Atom System Image
+(for further more details, visit "https://reactnative.dev/docs/0.73/environment-setup?guide=native&os=windows&platform=android")
 
 1)Backend Setup: 
 (Spring Boot with MySQL)

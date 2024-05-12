@@ -7,4 +7,5 @@ public interface ImageRepo extends JpaRepository <Image, Long> {
     Image findByItemid(long id);
     //in the image mode/entity find the Item id property, then
     //the id parameter would be passed to the controller
+    Image findByStock(int stock);
 }
