@@ -8,9 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
 import java.util.Base64;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -23,33 +21,34 @@ public class ImageSaveController {
 
     private ImageRepo ImageRepoObj;
 //new
-    @GetMapping("images/list")
-    public List<String> getImage() throws IOException {
-        //consider the file path is a String
-        List<String> imagePaths = List.of("D:\\desktop D\\3rd year\\PUSL3190_MDCGunathilaka\\newreactmobile\\public\\images\\poly/1.jpg",
-                "D:\\desktop D\\3rd year\\PUSL3190_MDCGunathilaka\\newreactmobile\\public\\images\\poly/2.jpg",
-                "D:\\desktop D\\3rd year\\PUSL3190_MDCGunathilaka\\newreactmobile\\public\\images\\poly/3.jpg");
+@GetMapping("images/list")
+public List<String> getImageSpandex() throws IOException {
+    List<String> imagePaths = List.of(
+            "/pol1.JPG",
+            "/pol2.JPG",
+            "/pol3.JPG"
+    );
 
-        //converts the file paths into Base64 string
-        //map func would give a list,
-        return imagePaths.stream().map(imagePath -> {
-            try {
-                //file claas is an i/o operation in java
-                File fileobj = new File(imagePath);
-
-                //from that file, read the data
-                FileInputStream readfile = new FileInputStream(fileobj);
-                byte[] bytes = new byte[(int) fileobj.length()];
-                readfile.read(bytes);
-                readfile.close();
-
-                // converts the file path to byte array, then to a Base64 string
-                return Base64.getEncoder().encodeToString(bytes);
-            } catch (IOException e) { //if input output exception, then display a runtime error
-                throw new RuntimeException(e);
+    return imagePaths.stream().map(imagePath -> {
+        try {
+            // Get the image as a stream from the classpath
+            InputStream is = getClass().getResourceAsStream(imagePath);
+            if (is == null) {
+                throw new FileNotFoundException("File not found on classpath: " + imagePath);
             }
-        }).collect(Collectors.toList());
-    }
+
+            // Read the data from the stream
+            byte[] bytes = is.readAllBytes();
+            is.close();
+
+            // Convert the byte array to a Base64 string
+            return Base64.getEncoder().encodeToString(bytes);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }).collect(Collectors.toList());
+
+}
 
     @GetMapping("images/{id}")
     public Image getImage(@PathVariable Long id) {

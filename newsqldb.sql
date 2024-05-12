@@ -27,7 +27,7 @@ CREATE TABLE `fb_cotton` (
   `uksize` int(11) NOT NULL,
   `usercw` double NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -36,7 +36,7 @@ CREATE TABLE `fb_cotton` (
 
 LOCK TABLES `fb_cotton` WRITE;
 /*!40000 ALTER TABLE `fb_cotton` DISABLE KEYS */;
-INSERT INTO `fb_cotton` VALUES (1,14,37),(2,14,37.5);
+INSERT INTO `fb_cotton` VALUES (1,14,37),(2,14,37.5),(3,8,31),(4,14,37);
 /*!40000 ALTER TABLE `fb_cotton` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -52,7 +52,7 @@ CREATE TABLE `fb_polyester` (
   `usercw` double NOT NULL,
   `uksize` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -61,7 +61,7 @@ CREATE TABLE `fb_polyester` (
 
 LOCK TABLES `fb_polyester` WRITE;
 /*!40000 ALTER TABLE `fb_polyester` DISABLE KEYS */;
-INSERT INTO `fb_polyester` VALUES (1,30,6),(2,31,6),(3,31.5,6),(4,33,8),(5,35.5,10),(6,34,10),(7,37,12),(8,37.5,12),(9,36,12),(10,38,14),(11,39.5,14),(12,41,16);
+INSERT INTO `fb_polyester` VALUES (1,30,6),(2,31,6),(3,31.5,6),(4,33,8),(5,35.5,10),(6,34,10),(7,37,12),(8,37.5,12),(9,36,12),(10,38,14),(11,39.5,14),(12,41,16),(42,37,12),(43,31,6);
 /*!40000 ALTER TABLE `fb_polyester` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -112,7 +112,7 @@ CREATE TABLE `feedback` (
 
 LOCK TABLES `feedback` WRITE;
 /*!40000 ALTER TABLE `feedback` DISABLE KEYS */;
-INSERT INTO `feedback` VALUES (1,31,'cotton',6),(2,31.25,'cotton',8),(3,31.5,'cotton',8),(4,32,'cotton',10),(5,33,'cotton',10),(6,30,'cotton',6),(7,34.5,'cotton',10),(8,34,'cotton',10),(9,35.5,'cotton',12),(10,36,'cotton',14),(11,37.5,'cotton',14),(12,37,'cotton',12),(13,38,'cotton',16),(14,39,'cotton',16),(15,40,'cotton',18),(16,42.5,'cotton',18),(17,30,'spandexblend',6),(18,31,'spandexblend',6),(19,32,'spandexblend',6),(20,33.5,'spandexblend',8),(21,33,'spandexblend',8),(22,34,'spandexblend',8),(23,34,'spandexblend',10),(24,35.5,'spandexblend',10),(25,34,'spandexblend',10),(26,37,'spandexblend',12),(27,36,'spandexblend',10),(28,36.25,'spandexblend',12),(29,36.5,'spandexblend',12),(30,38,'spandexblend',14),(31,39,'spandexblend',14),(32,38.5,'spandexblend',14),(33,39,'spandexblend',14),(34,40,'spandexblend',16),(35,42,'spandexblend',16),(36,41,'spandexblend',16),(52,30,'spandexblend',6),(53,31,'spandexblend',6),(54,32,'spandexblend',6),(55,32.5,'spandexblend',6),(56,34,'spandexblend',8),(57,35.5,'spandexblend',8),(58,35,'spandexblend',8),(59,36,'spandexblend',10),(60,36.5,'spandexblend',10),(61,37,'spandexblend',10),(62,38,'spandexblend',12),(63,39,'spandexblend',14),(64,40,'spandexblend',14),(65,40.5,'spandexblend',16),(102,37,'cotton',14),(103,37.5,'cotton',14);
+INSERT INTO `feedback` VALUES (1,31,'cotton',6),(2,31.25,'cotton',8),(3,31.5,'cotton',8),(4,32,'cotton',10),(5,33,'cotton',10),(6,30,'cotton',6),(7,34.5,'cotton',10),(8,34,'cotton',10),(9,35.5,'cotton',12),(10,36,'cotton',14),(11,37.5,'cotton',14),(12,37,'cotton',12),(13,38,'cotton',16),(14,39,'cotton',16),(15,40,'cotton',18),(16,42.5,'cotton',18),(17,30,'spandexblend',6),(18,31,'spandexblend',6),(19,32,'spandexblend',6),(20,33.5,'spandexblend',8),(21,33,'spandexblend',8),(22,34,'spandexblend',8),(23,34,'spandexblend',10),(24,35.5,'spandexblend',10),(25,34,'spandexblend',10),(26,37,'spandexblend',12),(27,36,'spandexblend',10),(28,36.25,'spandexblend',12),(29,36.5,'spandexblend',12),(30,38,'spandexblend',14),(31,39,'spandexblend',14),(32,38.5,'spandexblend',14),(33,39,'spandexblend',14),(34,40,'spandexblend',16),(35,42,'spandexblend',16),(36,41,'spandexblend',16),(52,30,'spandexblend',6),(53,31,'spandexblend',6),(54,32,'spandexblend',6),(55,32.5,'spandexblend',6),(56,34,'spandexblend',8),(57,35.5,'spandexblend',8),(58,35,'spandexblend',8),(59,36,'spandexblend',10),(60,36.5,'spandexblend',10),(61,37,'spandexblend',10),(62,38,'spandexblend',12),(63,39,'spandexblend',14),(64,40,'spandexblend',14),(65,40.5,'spandexblend',16),(102,37,'cotton',14),(103,37.5,'cotton',14),(152,37,'polyester',12),(202,31,'cotton',8),(203,31,'polyester',6),(252,37,'cotton',14);
 /*!40000 ALTER TABLE `feedback` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -134,7 +134,7 @@ CREATE TABLE `feedback_seq` (
 
 LOCK TABLES `feedback_seq` WRITE;
 /*!40000 ALTER TABLE `feedback_seq` DISABLE KEYS */;
-INSERT INTO `feedback_seq` VALUES (201);
+INSERT INTO `feedback_seq` VALUES (351);
 /*!40000 ALTER TABLE `feedback_seq` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -227,7 +227,7 @@ DROP TABLE IF EXISTS `login`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `login` (
-  `id` bigint(20) NOT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `loginpassword` varchar(255) DEFAULT NULL,
   `loginusername` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -244,28 +244,6 @@ LOCK TABLES `login` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `login_seq`
---
-
-DROP TABLE IF EXISTS `login_seq`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `login_seq` (
-  `next_val` bigint(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `login_seq`
---
-
-LOCK TABLES `login_seq` WRITE;
-/*!40000 ALTER TABLE `login_seq` DISABLE KEYS */;
-INSERT INTO `login_seq` VALUES (1);
-/*!40000 ALTER TABLE `login_seq` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `register`
 --
 
@@ -273,13 +251,13 @@ DROP TABLE IF EXISTS `register`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `register` (
-  `id` bigint(20) NOT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `age` int(11) NOT NULL,
   `chestwidth` double NOT NULL,
   `password` varchar(255) DEFAULT NULL,
   `username` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -288,30 +266,8 @@ CREATE TABLE `register` (
 
 LOCK TABLES `register` WRITE;
 /*!40000 ALTER TABLE `register` DISABLE KEYS */;
-INSERT INTO `register` VALUES (1,23,37,'Qwer','Chamo'),(2,22,30,'1234','Imashi'),(52,25,34,'Asdd','Min'),(152,30,38,'Zxcv','Gune');
+INSERT INTO `register` VALUES (1,21,31,'User1@2#','User'),(3,23,37,'Chamo1@2#','Chamo'),(4,30,35,'Jini1@2#','Jini');
 /*!40000 ALTER TABLE `register` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `register_seq`
---
-
-DROP TABLE IF EXISTS `register_seq`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `register_seq` (
-  `next_val` bigint(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `register_seq`
---
-
-LOCK TABLES `register_seq` WRITE;
-/*!40000 ALTER TABLE `register_seq` DISABLE KEYS */;
-INSERT INTO `register_seq` VALUES (301);
-/*!40000 ALTER TABLE `register_seq` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -323,4 +279,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-10 15:16:54
+-- Dump completed on 2024-05-12  7:13:03
