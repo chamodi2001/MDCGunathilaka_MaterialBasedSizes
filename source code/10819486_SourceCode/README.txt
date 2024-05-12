@@ -12,7 +12,7 @@ Download the 'newreactmobile' and 'springbootbackend' zip folders to your machin
 * Run the application using Intelij IDEA or with mvn spring-boot:run.
 -------------------------------
 For Database connection,
-* Import the 'newsizedb' sql file to your MySQL database using MySQL workbench or localhost phpMyAdmin.
+* Import the 'newsqldb' sql file to your MySQL database using MySQL workbench or localhost phpMyAdmin.
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
  
