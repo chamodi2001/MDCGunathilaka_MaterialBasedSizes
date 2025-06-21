@@ -1,8 +1,0 @@
-@PostMapping("/login")
-   Login newUser(@RequestBody Login newUser) {
-       return loginRepoObj.save(newUser); 
-   }
-
-INSERT INTO image (itemid, name_ofproduct, price, stock)
-VALUES (2,'Pink long Sleeve polyester',2500,1000);
-select * from image;
